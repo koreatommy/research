@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insight 보고서 — 모두의 창업 아이디어</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/analytics.css">
+  <link rel="stylesheet" href="/static/insight.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Insight 보고서</h1>
+    <p id="meta">데이터 로딩 중...</p>
+    <nav class="main-nav">
+      <a href="/" class="nav-tab">아이디어 목록</a>
+      <a href="/analytics" class="nav-tab">Raw data 분석</a>
+      <a href="/insight" class="nav-tab active">Insight</a>
+    </nav>
+  </header>
+
+  <main class="report-container insight-page">
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>인사이트를 생성하는 중입니다...</p>
+    </div>
+
+    <section class="report-section" id="sec-quant">
+      <h2 class="section-title">정량 분석</h2>
+      <p class="section-lead">분야·유형·키워드·유사군 등 숫자로 요약합니다.</p>
+      <div class="kpi-grid insight-kpi">
+        <div class="kpi-card"><span class="kpi-label">유사도 클러스터(연결요소)</span><span class="kpi-value" id="kpiClusters">-</span></div>
+        <div class="kpi-card"><span class="kpi-label">2건 이상 묶인 클러스터</span><span class="kpi-value" id="kpiMultiClusters">-</span></div>
+        <div class="kpi-card"><span class="kpi-label">최대 클러스터 규모</span><span class="kpi-value" id="kpiLargestCluster">-</span></div>
+        <div class="kpi-card"><span class="kpi-label">AI 언급 비율</span><span class="kpi-value" id="kpiAiPct">-</span></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>대분야별 건수</h3><div class="chart-canvas-wrap"><canvas id="chartByDivision"></canvas></div></div>
+        <div class="chart-box half"><h3>문제·가치 유형 비중</h3><div class="chart-canvas-wrap"><canvas id="chartProblemType"></canvas></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>고객군 추정 비중</h3><div class="chart-canvas-wrap"><canvas id="chartCustomer"></canvas></div></div>
+        <div class="chart-box half"><h3>AI 활용 언급 여부</h3><div class="chart-canvas-wrap"><canvas id="chartAI"></canvas></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>B2B / B2C / B2G 추정</h3><div class="chart-canvas-wrap"><canvas id="chartB2x"></canvas></div></div>
+        <div class="chart-box half"><h3>상위 빈출 키워드 (Top 20)</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartKeywords"></canvas></div></div>
+      </div>
+      <div class="chart-box full">
+        <h3>대규모 유사 아이디어 클러스터 샘플</h3>
+        <p class="chart-sub">요약에서 의미 토큰이 겹치는 아이디어를 그래프로 묶은 뒤, 규모가 큰 그룹의 대표 키워드입니다.</p>
+        <div class="table-wrapper"><table class="report-table" id="clusterSampleTable"><thead><tr><th>클러스터 규모</th><th>대표 키워드</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="insight-box" id="insightQuant"></div>
+    </section>
+
+    <section class="report-section" id="sec-qual">
+      <h2 class="section-title">정성 분석</h2>
+      <p class="section-lead">텍스트 패턴으로 창업 동기·과장/실현·사회형·기술형·로컬형을 해석합니다.</p>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>창업 동기 유형(키워드 추정)</h3><div class="chart-canvas-wrap"><canvas id="chartMotivation"></canvas></div></div>
+        <div class="chart-box half"><h3>과장형 vs 실현형 패턴</h3><div class="chart-canvas-wrap"><canvas id="chartHypeExec"></canvas></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>사회·임팩트형 아이디어 상위 키워드</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartSocialKw"></canvas></div></div>
+        <div class="chart-box half"><h3>로컬 분야 상위 키워드</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartLocalKw"></canvas></div></div>
+      </div>
+      <div class="chart-box full">
+        <h3>기술 언급은 많으나 시장·고객 언급이 적은 사례 (일반/기술)</h3>
+        <div class="table-wrapper"><table class="report-table" id="techWeakTable"><thead><tr><th>세부분야</th><th>요약(발췌)</th><th>좋아요</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="insight-box" id="insightQual"></div>
+    </section>
+
+    <section class="report-section" id="sec-strat">
+      <h2 class="section-title">전략 인사이트</h2>
+      <p class="section-lead">과밀·공백·지원 우선순위·사업화 잠재 유형을 제안합니다.</p>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>과밀 추정 — 세부분야 상위 5</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartCrowded"></canvas></div></div>
+        <div class="chart-box half"><h3>미충족·저밀도 후보 — 건수 하위 5</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartSparse"></canvas></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half"><h3>대분야별 평균 사업화 점수(휴리스틱)</h3><div class="chart-canvas-wrap"><canvas id="chartRadarDiv"></canvas></div></div>
+        <div class="chart-box half"><h3>세부분야 사업화 점수 상위 10</h3><div class="chart-canvas-wrap chart-tall"><canvas id="chartSubScore"></canvas></div></div>
+      </div>
+      <div class="chart-box full">
+        <h3>후속 지원·홍보가 필요해 보이는 세부분야</h3>
+        <p class="chart-sub">등록 건수는 많은데 평균 좋아요가 매우 낮은 분야(내부 참여 신호 약함).</p>
+        <div class="table-wrapper"><table class="report-table" id="supportTable"><thead><tr><th>세부분야</th><th>건수</th><th>평균 좋아요</th><th>총 좋아요</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="chart-box full">
+        <h3>사업화 점수 상위 아이디어 샘플</h3>
+        <div class="table-wrapper"><table class="report-table" id="scoreSampleTable"><thead><tr><th>#</th><th>요약</th><th>점수</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="insight-box" id="insightStrat"></div>
+    </section>
+
+    <section class="report-section report-footer-section">
+      <p class="report-footer-text">본 Insight는 공개 요약 텍스트의 <strong>키워드·휴리스틱 분류</strong>이며, 실제 시장성·사업화와 다를 수 있습니다.<br>
+      데이터 출처: <strong>modoo.or.kr</strong> · API: <code>/api/insight</code></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>데이터 출처: <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a></p>
+  </footer>
+
+  <script src="/static/insight.js"></script>
+</body>
+</html>

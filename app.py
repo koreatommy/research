@@ -21,10 +21,13 @@ from fastapi.staticfiles import StaticFiles
 from modoo_fetch import CrawlError, collect_all_ideas
 from modoo_filters import TECH_SUBCATEGORIES, LOCAL_SUBCATEGORIES, filter_ideas
 from modoo_analytics import compute_analytics
+from modoo_insight import compute_insight
 
 ROOT = Path(__file__).resolve().parent
 JSON_PATH = ROOT / "modoo_all_ideas.json"
-STATIC_DIR = ROOT / "static"
+RESEARCH_DIR = ROOT / "research"
+STATIC_DIR = RESEARCH_DIR / "static"
+DATA_DIR = RESEARCH_DIR / "data"
 
 ideas_data: dict[str, Any] = {}
 crawl_lock = asyncio.Lock()
@@ -54,14 +57,16 @@ app = FastAPI(title="모두의 창업 뷰어", lifespan=lifespan)
 
 if STATIC_DIR.is_dir():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+if DATA_DIR.is_dir():
+    app.mount("/data", StaticFiles(directory=str(DATA_DIR)), name="data")
 
 
 @app.get("/")
 async def index():
-    html_path = STATIC_DIR / "index.html"
+    html_path = RESEARCH_DIR / "index.html"
     if html_path.is_file():
         return FileResponse(html_path, media_type="text/html")
-    return {"message": "static/index.html 파일이 없습니다."}
+    return {"message": "research/index.html 파일이 없습니다."}
 
 
 @app.get("/api/meta")
@@ -171,10 +176,18 @@ async def api_crawl():
 
 @app.get("/analytics")
 async def analytics_page():
-    html_path = STATIC_DIR / "analytics.html"
+    html_path = RESEARCH_DIR / "analytics.html"
     if html_path.is_file():
         return FileResponse(html_path, media_type="text/html")
-    return {"message": "static/analytics.html 파일이 없습니다."}
+    return {"message": "research/analytics.html 파일이 없습니다."}
+
+
+@app.get("/insight")
+async def insight_page():
+    html_path = RESEARCH_DIR / "insight.html"
+    if html_path.is_file():
+        return FileResponse(html_path, media_type="text/html")
+    return {"message": "research/insight.html 파일이 없습니다."}
 
 
 @app.get("/api/analytics")
@@ -182,6 +195,13 @@ async def api_analytics():
     ideas: list = ideas_data.get("ideas") or []
     crawled_at = ideas_data.get("crawled_at")
     return compute_analytics(ideas, crawled_at=crawled_at)
+
+
+@app.get("/api/insight")
+async def api_insight():
+    ideas: list = ideas_data.get("ideas") or []
+    crawled_at = ideas_data.get("crawled_at")
+    return compute_insight(ideas, crawled_at=crawled_at)
 
 
 @app.get("/api/export/json")

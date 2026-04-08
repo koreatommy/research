@@ -268,4 +268,10 @@ python3 crawl_modoo_all.py
 
 ---
 
+## 11. 배포 운영 문서
+
+- 로컬 최신 수집 → `research/data` 반영 → Git 푸시 → Vercel 자동배포 절차는 [`new_deploy.md`](new_deploy.md)를 참고하세요.
+
+---
+
 *문서 버전: 프로젝트 디렉터리 기준으로 생성되었습니다. API URL·필드는 서버 측 변경 시 실제 응답과 다를 수 있습니다.*

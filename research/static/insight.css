@@ -1,0 +1,30 @@
+/* Insight 보고서 — analytics.css 보완 */
+
+.insight-page .section-lead {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: -12px 0 20px;
+  line-height: 1.5;
+}
+
+.insight-kpi {
+  margin-bottom: 20px;
+}
+
+.chart-sub {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: -8px 0 12px;
+  line-height: 1.45;
+}
+
+.insight-page .insight-box {
+  margin-top: 16px;
+}
+
+.insight-page code {
+  font-size: 0.85em;
+  background: var(--border);
+  padding: 0 4px;
+  border-radius: 3px;
+}
