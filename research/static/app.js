@@ -429,7 +429,11 @@
       if (excelBtn) {
         const link = document.createElement("a");
         link.href = "/api/export/xlsx";
-        link.className = excelBtn.className.replace("btn-disabled", "").trim();
+        link.className = excelBtn.className
+          .replace("btn-disabled", "")
+          .replace("hidden", "")
+          .replace(/\s+/g, " ")
+          .trim();
         link.download = "";
         link.textContent = "엑셀 다운로드";
         excelBtn.replaceWith(link);
