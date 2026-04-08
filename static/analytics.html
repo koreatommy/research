@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터분석 — 모두의 창업 아이디어</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/analytics.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@2.0.1/dist/chartjs-chart-matrix.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>모두의 창업 아이디어</h1>
+    <p id="meta">데이터 로딩 중...</p>
+    <nav class="main-nav">
+      <a href="/" class="nav-tab">아이디어 목록</a>
+      <a href="/analytics" class="nav-tab active">데이터분석</a>
+    </nav>
+  </header>
+
+  <main class="report-container">
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="spinner"></div>
+      <p>통계 데이터를 분석하고 있습니다...</p>
+    </div>
+
+    <!-- Section 1: 핵심 요약 -->
+    <section id="sec-summary" class="report-section">
+      <h2 class="section-title">1. 핵심 요약 (Executive Summary)</h2>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">총 아이디어</span>
+          <span class="kpi-value" id="kpiTotal">-</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">참여자(도전자)</span>
+          <span class="kpi-value" id="kpiContributors">-</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">평균 좋아요</span>
+          <span class="kpi-value" id="kpiAvgLikes">-</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">총 좋아요</span>
+          <span class="kpi-value" id="kpiTotalLikes">-</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">세부분야 수</span>
+          <span class="kpi-value" id="kpiSubcategories">-</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">수집일</span>
+          <span class="kpi-value kpi-date" id="kpiDate">-</span>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>대분야별 아이디어 비율</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartDivisionDonut"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>대분야별 참여자 수</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartDivisionContributors"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 분야별 분포 -->
+    <section id="sec-distribution" class="report-section">
+      <h2 class="section-title">2. 분야별 분포 분석</h2>
+      <div class="chart-row">
+        <div class="chart-box full">
+          <h3>세부분야별 아이디어 수</h3>
+          <div class="chart-canvas-wrap chart-tall"><canvas id="chartSubcategoryBar"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>일반/기술 세부분야 구성</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartTechStack"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>로컬 세부분야 구성</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartLocalStack"></canvas></div>
+        </div>
+      </div>
+      <div class="insight-box" id="insightDistribution"></div>
+    </section>
+
+    <!-- Section 3: 시계열 분석 -->
+    <section id="sec-temporal" class="report-section">
+      <h2 class="section-title">3. 시계열 분석 (Temporal Analysis)</h2>
+      <div class="chart-box full">
+        <div class="chart-toolbar">
+          <h3>아이디어 등록 추이</h3>
+          <div class="toggle-group">
+            <button class="toggle-btn active" data-period="monthly">월별</button>
+            <button class="toggle-btn" data-period="weekly">주별</button>
+            <button class="toggle-btn" data-period="daily">일별</button>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap chart-wide"><canvas id="chartTimeSeries"></canvas></div>
+      </div>
+      <div class="chart-box full">
+        <h3>대분야별 월간 추이 비교</h3>
+        <div class="chart-canvas-wrap chart-wide"><canvas id="chartDivisionMonthly"></canvas></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>요일별 등록 패턴</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartWeekday"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>시간대별 등록 패턴</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartHourly"></canvas></div>
+        </div>
+      </div>
+      <div class="insight-box" id="insightTemporal"></div>
+    </section>
+
+    <!-- Section 4: 참여도/인기도 분석 -->
+    <section id="sec-engagement" class="report-section">
+      <h2 class="section-title">4. 참여도/인기도 분석 (Engagement)</h2>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>좋아요 구간별 분포</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartLikesDist"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>세부분야별 평균 좋아요</h3>
+          <div class="chart-canvas-wrap chart-tall"><canvas id="chartSubLikes"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box full">
+        <h3>Top 15 인기 아이디어</h3>
+        <div class="table-wrapper">
+          <table id="topLikedTable" class="report-table">
+            <thead>
+              <tr><th>#</th><th>아이디어</th><th>분야</th><th>세부분야</th><th>도전자</th><th>좋아요</th><th>등록일</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="insight-box" id="insightEngagement"></div>
+    </section>
+
+    <!-- Section 5: 참여자 분석 -->
+    <section id="sec-contributors" class="report-section">
+      <h2 class="section-title">5. 참여자(도전자) 분석</h2>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>참여자 유형 (1회 vs 반복)</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartContribType"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>참여자당 아이디어 수 분포</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartContribDist"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box full">
+        <h3>Top 15 다작 참여자</h3>
+        <div class="chart-canvas-wrap chart-tall"><canvas id="chartTopContrib"></canvas></div>
+      </div>
+      <div class="insight-box" id="insightContributors"></div>
+    </section>
+
+    <!-- Section 6: 교차 분석 -->
+    <section id="sec-cross" class="report-section">
+      <h2 class="section-title">6. 교차 분석 (Cross-tabulation)</h2>
+      <div class="chart-box full">
+        <h3>세부분야 x 월 히트맵</h3>
+        <div class="chart-canvas-wrap chart-heatmap"><canvas id="chartHeatmap"></canvas></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>대분야별 좋아요 구간 비교</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartDivLikeRange"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>세부분야별 참여자 다양성 (HHI)</h3>
+          <div class="chart-canvas-wrap chart-tall"><canvas id="chartDiversityHHI"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box full">
+        <h3>분야별 시간대 등록 패턴</h3>
+        <div class="chart-canvas-wrap chart-wide"><canvas id="chartHourDiv"></canvas></div>
+      </div>
+      <div class="insight-box" id="insightCross"></div>
+    </section>
+
+    <!-- Section 7: 텍스트 마이닝 -->
+    <section id="sec-text" class="report-section">
+      <h2 class="section-title">7. 텍스트 마이닝 (Text Analysis)</h2>
+      <div class="chart-box full">
+        <h3>주요 키워드 빈도 (Top 30)</h3>
+        <div class="chart-canvas-wrap chart-tall"><canvas id="chartKeywords"></canvas></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-box half">
+          <h3>아이디어 요약 길이 분포</h3>
+          <div class="chart-canvas-wrap"><canvas id="chartLengthDist"></canvas></div>
+        </div>
+        <div class="chart-box half">
+          <h3>세부분야별 평균 요약 길이</h3>
+          <div class="chart-canvas-wrap chart-tall"><canvas id="chartAvgLength"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-box full">
+        <h3>세부분야별 핵심 키워드 비교</h3>
+        <div id="keywordBySubGrid" class="keyword-sub-grid"></div>
+      </div>
+      <div class="insight-box" id="insightText"></div>
+    </section>
+
+    <!-- 보고서 끝 -->
+    <section class="report-section report-footer-section">
+      <p class="report-footer-text">본 보고서는 <strong>modoo.or.kr</strong> 공개 아이디어 데이터를 기반으로 자동 생성되었습니다.<br>
+      데이터 수집 및 분석은 실시간으로 최신 상태를 반영합니다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>데이터 출처: <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a></p>
+  </footer>
+
+  <script src="/static/analytics.js"></script>
+</body>
+</html>

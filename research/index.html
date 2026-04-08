@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모두의 창업 아이디어 뷰어</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header>
+    <h1>모두의 창업 아이디어</h1>
+    <p id="meta">로딩 중...</p>
+    <nav class="main-nav">
+      <a href="/" class="nav-tab active">아이디어 목록</a>
+      <a href="/analytics" class="nav-tab">데이터분석</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <p class="deploy-hint" title="Vercel 정적 배포">
+          데이터는 로컬에서 수집한 뒤 <code>export_for_research.py</code>로 이 사이트의 <code>data/</code>에 반영합니다.
+        </p>
+      </div>
+      <div class="toolbar-right">
+        <a href="/data/ideas.json" class="btn btn-secondary" download>JSON 다운로드</a>
+        <span class="btn btn-secondary btn-disabled" title="로컬 FastAPI(app.py)에서만 제공">엑셀 다운로드</span>
+      </div>
+    </div>
+
+    <section class="filter-panel" aria-label="조건 검색">
+      <h2 class="filter-title">조건 검색 <span class="filter-hint">(분야정리 기준 세부분야)</span></h2>
+      <div class="filter-row">
+        <label class="filter-field">
+          <span>대분야</span>
+          <select id="divisionSelect">
+            <option value="">전체</option>
+          </select>
+        </label>
+        <label class="filter-field">
+          <span>세부분야</span>
+          <select id="subcategorySelect" disabled>
+            <option value="">대분야를 선택하세요</option>
+          </select>
+        </label>
+        <label class="filter-field filter-grow">
+          <span>키워드</span>
+          <input type="search" id="keywordInput" placeholder="요약·태그에 포함된 문자열" autocomplete="off">
+        </label>
+        <div class="filter-actions">
+          <button type="button" id="searchBtn" class="btn btn-primary">검색</button>
+          <button type="button" id="resetFilterBtn" class="btn btn-secondary">초기화</button>
+        </div>
+      </div>
+      <p id="filterNote" class="filter-note hidden">
+        세부분야는 API에서 직접 가져온 정확한 분류입니다.
+      </p>
+      <p id="filterResultCount" class="filter-result-count hidden"></p>
+    </section>
+
+    <div class="controls">
+      <div class="pagination">
+        <button id="firstBtn" title="처음">&#x21E4;</button>
+        <button id="prevBtn" title="이전">&#x2190;</button>
+        <span id="pageInfo">-</span>
+        <button id="nextBtn" title="다음">&#x2192;</button>
+        <button id="lastBtn" title="마지막">&#x21E5;</button>
+      </div>
+      <label class="page-size-label">
+        페이지당
+        <select id="pageSizeSelect">
+          <option value="12" selected>12</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="ideasTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>아이디어</th>
+            <th>분야</th>
+            <th>세부분야</th>
+            <th>도전자</th>
+            <th>좋아요</th>
+            <th>등록일</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="controls controls-bottom">
+      <div class="pagination">
+        <button id="firstBtn2" title="처음">&#x21E4;</button>
+        <button id="prevBtn2" title="이전">&#x2190;</button>
+        <span id="pageInfo2">-</span>
+        <button id="nextBtn2" title="다음">&#x2192;</button>
+        <button id="lastBtn2" title="마지막">&#x21E5;</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>데이터 출처: <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a></p>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

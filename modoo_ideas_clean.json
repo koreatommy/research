@@ -1,0 +1,151 @@
+{
+  "crawled_at": "2026-04-01T17:27:03.527261",
+  "url": "https://www.modoo.or.kr/idea/list",
+  "total": 16,
+  "ideas": [
+    {
+      "index": 1,
+      "category": "로컬",
+      "posted_at": "2분 전",
+      "idea": "반려동물 돌봄 플랫폼",
+      "nickname": "국명근",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 2,
+      "category": "일반/기술",
+      "posted_at": "3분 전",
+      "idea": "ai 혼자사는 사람들맞춤형",
+      "nickname": "용균",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 3,
+      "category": "일반/기술",
+      "posted_at": "5분 전",
+      "idea": "슬립쉘(Sleep Shell): 설치 없이 사용하는 팝업형 개인 수면 환경 디바이스로, 빛과 외부 자극을 차단해 아늑한 수면 공간을 만드는 제품",
+      "nickname": "마도리",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 4,
+      "category": "로컬",
+      "posted_at": "7분 전",
+      "idea": "6천원의 점심밥: 남자 소울프드 3대장만을 고집하는 점심 특선 전문 음식점",
+      "nickname": "최명현",
+      "likes": "1",
+      "href": ""
+    },
+    {
+      "index": 5,
+      "category": "일반/기술",
+      "posted_at": "8분 전",
+      "idea": "교대근무로 인해 건강이 안좋아진 직장인들을 도와주는 앱",
+      "nickname": "정종훈",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 6,
+      "category": "일반/기술",
+      "posted_at": "10분 전",
+      "idea": "사람처럼 실시간 통화·상담하는 AI상담사 '팅코콜'-24시간 배달주문·택시호출·은행,공공기관 상담까지 전화로 해결(실동작 최소구동버전, 3분영상 꼭 음성켜고 확인부탁드립니다)",
+      "nickname": "모두의전화",
+      "likes": "2",
+      "href": ""
+    },
+    {
+      "index": 7,
+      "category": "일반/기술",
+      "posted_at": "14분 전",
+      "idea": "웨어러블 센서와 컴퓨터 사용 데이터를 결합하여 손목 과사용 위험을 분석하고 예방하는 디지털 헬스케어 시스템",
+      "nickname": "돌룰",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 8,
+      "category": "일반/기술",
+      "posted_at": "15분 전",
+      "idea": "예비창업자와 소상공인에게 적합한 정부지원사업을 자동으로 추천하고, 사업계획서 및 제출서류 작성까지 도와주는 AI 기반 창업지원 플랫폼을 만들고 싶습니다.",
+      "nickname": "방준영",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 9,
+      "category": "일반/기술",
+      "posted_at": "17분 전",
+      "idea": "기존 모터의 한계를 극복한 말굽형 이중 토크 모터 기술을은 자기장 손실을 없애고 토크 밀도를 2배로 높이며 제조 비용을 크게 절감하는 혁신적 성능을갖췄습니다 고성장 산업에 적용다",
+      "nickname": "백곰1251",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 10,
+      "category": "일반/기술",
+      "posted_at": "17분 전",
+      "idea": "히트씽크를 패턴 구조화해 LED PKG를 바로 SMT하는 방식으로 열병목 현상을 최소화한 초경량 고출력 LED 조명",
+      "nickname": "꽃지화",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 11,
+      "category": "일반/기술",
+      "posted_at": "29분 전",
+      "idea": "자연의 재료를 이용한 건강1회분",
+      "nickname": "인닥터",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 12,
+      "category": "일반/기술",
+      "posted_at": "31분 전",
+      "idea": "사업 명칭: \"넥스트 스티치 (Next Stitch) : AI 기술로 신진 디자이너의 브랜딩부터 글로벌 진출까지 전 과정을 자동화하여 지원하는 패션 인큐베이팅 플랫폼 입니다.",
+      "nickname": "서윤64",
+      "likes": "0",
+      "href": ""
+    },
+    {
+      "index": 13,
+      "category": "",
+      "posted_at": "",
+      "idea": "",
+      "nickname": "",
+      "likes": "",
+      "href": ""
+    },
+    {
+      "index": 14,
+      "category": "",
+      "posted_at": "",
+      "idea": "",
+      "nickname": "",
+      "likes": "",
+      "href": ""
+    },
+    {
+      "index": 15,
+      "category": "",
+      "posted_at": "",
+      "idea": "",
+      "nickname": "",
+      "likes": "",
+      "href": ""
+    },
+    {
+      "index": 16,
+      "category": "",
+      "posted_at": "",
+      "idea": "",
+      "nickname": "",
+      "likes": "",
+      "href": ""
+    }
+  ]
+}

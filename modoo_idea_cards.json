@@ -1,0 +1,449 @@
+{
+  "crawled_at": "2026-04-01T17:14:44.859148",
+  "url": "https://www.modoo.or.kr/idea/list",
+  "selector_used": "[class*='item']",
+  "total_cards": 36,
+  "cards": [
+    {
+      "index": 1,
+      "content": "시작은 이렇게\n도전하는 아이디어\n함께하는 기관들/사람들\nAI 솔루션 지원\n알려드려요\n로그인\n도전하기",
+      "links": [
+        {
+          "label": "",
+          "href": "/"
+        },
+        {
+          "label": "시작은 이렇게",
+          "href": "/intro"
+        },
+        {
+          "label": "AI 솔루션 지원",
+          "href": "/ai-solution"
+        },
+        {
+          "label": "로그인",
+          "href": "/auth/login"
+        },
+        {
+          "label": "도전하기",
+          "href": "/auth/login?finalRedirectPath=/apply"
+        }
+      ],
+      "images": [
+        {
+          "alt": "모두의창업",
+          "src": "/assets/logo-full.png"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "content": "시작은 이렇게\n도전하는 아이디어\n함께하는 기관들/사람들\nAI 솔루션 지원\n알려드려요",
+      "links": [
+        {
+          "label": "",
+          "href": "/"
+        },
+        {
+          "label": "시작은 이렇게",
+          "href": "/intro"
+        },
+        {
+          "label": "AI 솔루션 지원",
+          "href": "/ai-solution"
+        }
+      ],
+      "images": [
+        {
+          "alt": "모두의창업",
+          "src": "/assets/logo-full.png"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "content": "시작은 이렇게\n도전하는 아이디어\n함께하는 기관들/사람들\nAI 솔루션 지원\n알려드려요",
+      "links": [
+        {
+          "label": "시작은 이렇게",
+          "href": "/intro"
+        },
+        {
+          "label": "AI 솔루션 지원",
+          "href": "/ai-solution"
+        }
+      ],
+      "images": []
+    },
+    {
+      "index": 4,
+      "content": "함께하는 기관들/사람들",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 5,
+      "content": "함께하는 기관들/사람들",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 6,
+      "content": "분야 전체\n세부 분야 전체",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 7,
+      "content": "분야 전체\n세부 분야 전체",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 8,
+      "content": "공개 아이디어 총 2,148건 (비공개 1,309건)\n\n한 줄로 보는 도전 아이디어는 '정보 공개'를 신청하신 분들의 아이디어만 노출 됩니다.\n\n최신 순",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 9,
+      "content": "일반/기술\n2분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 10,
+      "content": "일반/기술\n2분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 11,
+      "content": "일반/기술\n5분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 12,
+      "content": "도전자\n백곰1251\n0",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 13,
+      "content": "도전자\n백곰1251",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 14,
+      "content": "일반/기술\n5분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 15,
+      "content": "일반/기술\n17분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 16,
+      "content": "일반/기술\n18분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 17,
+      "content": "도전자\n서윤64\n0",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 18,
+      "content": "일반/기술\n23분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 19,
+      "content": "일반/기술\n25분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 20,
+      "content": "도전자\nhuurray_\n0",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 21,
+      "content": "도전자\nhuurray_",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 22,
+      "content": "일반/기술\n25분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 23,
+      "content": "일반/기술\n32분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 24,
+      "content": "도전자\n디앤아이\n0",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 25,
+      "content": "일반/기술\n37분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 26,
+      "content": "일반/기술\n38분 전",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 27,
+      "content": "1\n2\n· · ·\n179",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 28,
+      "content": "1\n2\n· · ·\n179",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 29,
+      "content": "공지사항\n[로컬 분야] 운영기관(멘토기관) 안내\n모두의창업 소개\nㅣ\n서비스약관\nㅣ\n개인정보 처리방침\nㅣ\nFAQ / 공지사항\n대표번호 : 1357+5",
+      "links": [
+        {
+          "label": "공지사항\n[로컬 분야] 운영기관(멘토기관) 안내",
+          "href": "/notice/9"
+        },
+        {
+          "label": "모두의창업 소개",
+          "href": "/intro"
+        },
+        {
+          "label": "서비스약관",
+          "href": "/terms"
+        },
+        {
+          "label": "개인정보 처리방침",
+          "href": "https://www.kised.or.kr/menu.es?mid=a10707000000"
+        },
+        {
+          "label": "FAQ / 공지사항",
+          "href": "/notice/list"
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/modoo_startup"
+        },
+        {
+          "label": "",
+          "href": "https://www.facebook.com/modoostartupofficial"
+        },
+        {
+          "label": "",
+          "href": "https://www.youtube.com/@modoo_startup_official"
+        },
+        {
+          "label": "",
+          "href": "https://www.tiktok.com/@modoo_startup"
+        },
+        {
+          "label": "",
+          "href": "https://www.mss.go.kr"
+        },
+        {
+          "label": "",
+          "href": "https://www.kised.or.kr"
+        },
+        {
+          "label": "",
+          "href": "https://www.semas.or.kr"
+        }
+      ],
+      "images": [
+        {
+          "alt": "tiktok",
+          "src": "/assets/icon/tiktok.svg"
+        },
+        {
+          "alt": "중소벤처기업부",
+          "src": "/assets/중소벤처기업부.png"
+        },
+        {
+          "alt": "창업진흥원",
+          "src": "/assets/창업진흥원.png"
+        },
+        {
+          "alt": "소상공인시장진흥공단",
+          "src": "/assets/소상공인시장진흥공단.png"
+        }
+      ]
+    },
+    {
+      "index": 30,
+      "content": "공지사항\n[로컬 분야] 운영기관(멘토기관) 안내",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 31,
+      "content": "[로컬 분야] 운영기관(멘토기관) 안내",
+      "links": [],
+      "images": []
+    },
+    {
+      "index": 32,
+      "content": "모두의창업 소개\nㅣ\n서비스약관\nㅣ\n개인정보 처리방침\nㅣ\nFAQ / 공지사항\n대표번호 : 1357+5",
+      "links": [
+        {
+          "label": "모두의창업 소개",
+          "href": "/intro"
+        },
+        {
+          "label": "서비스약관",
+          "href": "/terms"
+        },
+        {
+          "label": "개인정보 처리방침",
+          "href": "https://www.kised.or.kr/menu.es?mid=a10707000000"
+        },
+        {
+          "label": "FAQ / 공지사항",
+          "href": "/notice/list"
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/modoo_startup"
+        },
+        {
+          "label": "",
+          "href": "https://www.facebook.com/modoostartupofficial"
+        },
+        {
+          "label": "",
+          "href": "https://www.youtube.com/@modoo_startup_official"
+        },
+        {
+          "label": "",
+          "href": "https://www.tiktok.com/@modoo_startup"
+        },
+        {
+          "label": "",
+          "href": "https://www.mss.go.kr"
+        },
+        {
+          "label": "",
+          "href": "https://www.kised.or.kr"
+        },
+        {
+          "label": "",
+          "href": "https://www.semas.or.kr"
+        }
+      ],
+      "images": [
+        {
+          "alt": "tiktok",
+          "src": "/assets/icon/tiktok.svg"
+        },
+        {
+          "alt": "중소벤처기업부",
+          "src": "/assets/중소벤처기업부.png"
+        },
+        {
+          "alt": "창업진흥원",
+          "src": "/assets/창업진흥원.png"
+        },
+        {
+          "alt": "소상공인시장진흥공단",
+          "src": "/assets/소상공인시장진흥공단.png"
+        }
+      ]
+    },
+    {
+      "index": 33,
+      "content": "모두의창업 소개\nㅣ\n서비스약관\nㅣ\n개인정보 처리방침\nㅣ\nFAQ / 공지사항\n대표번호 : 1357+5",
+      "links": [
+        {
+          "label": "모두의창업 소개",
+          "href": "/intro"
+        },
+        {
+          "label": "서비스약관",
+          "href": "/terms"
+        },
+        {
+          "label": "개인정보 처리방침",
+          "href": "https://www.kised.or.kr/menu.es?mid=a10707000000"
+        },
+        {
+          "label": "FAQ / 공지사항",
+          "href": "/notice/list"
+        }
+      ],
+      "images": []
+    },
+    {
+      "index": 34,
+      "content": "모두의창업 소개\nㅣ\n서비스약관\nㅣ\n개인정보 처리방침\nㅣ\nFAQ / 공지사항",
+      "links": [
+        {
+          "label": "모두의창업 소개",
+          "href": "/intro"
+        },
+        {
+          "label": "서비스약관",
+          "href": "/terms"
+        },
+        {
+          "label": "개인정보 처리방침",
+          "href": "https://www.kised.or.kr/menu.es?mid=a10707000000"
+        },
+        {
+          "label": "FAQ / 공지사항",
+          "href": "/notice/list"
+        }
+      ],
+      "images": []
+    },
+    {
+      "index": 35,
+      "content": "ㅣ\n개인정보 처리방침",
+      "links": [
+        {
+          "label": "개인정보 처리방침",
+          "href": "https://www.kised.or.kr/menu.es?mid=a10707000000"
+        }
+      ],
+      "images": []
+    },
+    {
+      "index": 36,
+      "content": "ㅣ\nFAQ / 공지사항",
+      "links": [
+        {
+          "label": "FAQ / 공지사항",
+          "href": "/notice/list"
+        }
+      ],
+      "images": []
+    }
+  ]
+}
