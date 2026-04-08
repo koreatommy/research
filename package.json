@@ -1,0 +1,8 @@
+{
+  "name": "modoo",
+  "private": true,
+  "description": "Vercel: copies research/ static site to out/ for deployment",
+  "scripts": {
+    "build": "rm -rf out && mkdir -p out && cp research/index.html research/analytics.html out/ && cp research/vercel.json out/ && cp -R research/static out/static && cp -R research/data out/data"
+  }
+}
