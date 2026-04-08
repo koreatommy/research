@@ -412,13 +412,18 @@
   }
 
   async function detectApiMode() {
+    let isApi = false;
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 2000);
       const res = await fetch("/api/meta", { signal: ctrl.signal });
       clearTimeout(timer);
-      if (!res.ok) return;
+      isApi = res.ok;
+    } catch (_) {
+      // FastAPI 없음
+    }
 
+    if (isApi) {
       const crawlBtn = document.getElementById("crawlBtn");
       const excelBtn = document.getElementById("excelBtn");
 
@@ -438,8 +443,20 @@
         link.textContent = "엑셀 다운로드";
         excelBtn.replaceWith(link);
       }
-    } catch (_) {
-      // FastAPI 없음 — 버튼 숨김 유지
+    } else {
+      // Vercel 정적 환경 — /data/ideas.xlsx 존재 시 버튼 표시
+      const staticExcelBtn = document.getElementById("staticExcelBtn");
+      if (staticExcelBtn) {
+        try {
+          const ctrl = new AbortController();
+          const timer = setTimeout(() => ctrl.abort(), 2000);
+          const res = await fetch("/data/ideas.xlsx", { method: "HEAD", signal: ctrl.signal });
+          clearTimeout(timer);
+          if (res.ok) staticExcelBtn.classList.remove("hidden");
+        } catch (_) {
+          // 파일 없음 — 버튼 숨김 유지
+        }
+      }
     }
   }
 
