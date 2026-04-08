@@ -1,4 +1,4 @@
-/* Insight 보고서 — Chart.js, GET /api/insight */
+/* Insight 보고서 — Chart.js, /data/insight.json (정적) · /api/insight (로컬 API) */
 (function () {
   "use strict";
 
@@ -369,11 +369,16 @@
       </ul>`;
   }
 
+  async function loadInsightPayload() {
+    let res = await fetch("/data/insight.json");
+    if (!res.ok) res = await fetch("/api/insight");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
   async function init() {
     try {
-      const res = await fetch("/api/insight");
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const d = await res.json();
+      const d = await loadInsightPayload();
       if (d.empty) {
         document.getElementById("meta").textContent = "데이터가 없습니다. 먼저 수집을 실행하세요.";
         document.getElementById("loadingOverlay").classList.add("hidden");
@@ -390,7 +395,8 @@
       document.getElementById("loadingOverlay").classList.add("hidden");
     } catch (e) {
       console.error(e);
-      document.getElementById("meta").textContent = "Insight API 로드 실패 (/api/insight)";
+      document.getElementById("meta").textContent =
+        "Insight 데이터 로드 실패 (/data/insight.json 또는 /api/insight)";
       document.getElementById("loadingOverlay").classList.add("hidden");
     }
   }

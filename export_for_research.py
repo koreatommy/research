@@ -3,6 +3,7 @@
 modoo_all_ideas.json을 Vercel용 research 레포의 data/로보냅니다.
   - ideas.json: 원본과 동일 내용(복사)
   - analytics.json: modoo_analytics.compute_analytics 결과
+  - insight.json: modoo_insight.compute_insight 결과
 
 사용 예:
   python3 export_for_research.py
@@ -49,14 +50,21 @@ def main() -> None:
     crawled_at = data.get("crawled_at")
 
     from modoo_analytics import compute_analytics
+    from modoo_insight import compute_insight
 
     analytics = compute_analytics(ideas, crawled_at=crawled_at)
     dest_analytics = args.out / "analytics.json"
     with open(dest_analytics, "w", encoding="utf-8") as f:
         json.dump(analytics, f, ensure_ascii=False, indent=2)
 
+    insight = compute_insight(ideas, crawled_at=crawled_at)
+    dest_insight = args.out / "insight.json"
+    with open(dest_insight, "w", encoding="utf-8") as f:
+        json.dump(insight, f, ensure_ascii=False, indent=2)
+
     print(f"Wrote {dest_ideas}")
     print(f"Wrote {dest_analytics}")
+    print(f"Wrote {dest_insight}")
 
 
 if __name__ == "__main__":

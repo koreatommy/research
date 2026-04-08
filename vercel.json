@@ -4,6 +4,7 @@
   "framework": null,
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/analytics", "destination": "/analytics.html" }
+    { "source": "/analytics", "destination": "/analytics.html" },
+    { "source": "/insight", "destination": "/insight.html" }
   ]
 }
