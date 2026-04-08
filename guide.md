@@ -179,11 +179,14 @@ sequenceDiagram
 flowchart LR
   A[페이지 로드] --> B["/data/ideas.json 로드"]
   B --> C{"/api/meta 응답 확인"}
-  C -->|200 OK — FastAPI| D["최신 데이터 수집 버튼 표시\n엑셀 다운로드 링크 활성화"]
-  C -->|실패 — Vercel 정적| E["수집 버튼 숨김 유지"]
+  C -->|200 OK — FastAPI| D["최신 데이터 수집 버튼 표시\n엑셀 다운로드 링크 활성화\n(→ /api/export/xlsx)"]
+  C -->|실패 — Vercel 정적| E{"/data/ideas.xlsx HEAD 확인"}
+  E -->|존재| F["정적 엑셀 다운로드 버튼 표시\n(→ /data/ideas.xlsx)"]
+  E -->|없음| G["엑셀 버튼 숨김 유지"]
 ```
 
-`research/static/app.js`가 `/api/meta`를 2초 타임아웃으로 확인해 FastAPI 환경인지 자동 감지합니다.
+`research/static/app.js`가 `/api/meta`를 2초 타임아웃으로 확인해 FastAPI 환경인지 자동 감지합니다.  
+Vercel 정적 환경에서는 `/data/ideas.xlsx` 파일 존재 여부를 HEAD 요청으로 추가 확인합니다.
 
 ---
 
@@ -195,7 +198,7 @@ flowchart LR
 | GET | `/analytics` | `research/analytics.html` 서빙 |
 | GET | `/insight` | `research/insight.html` 서빙 |
 | GET | `/static/*` | CSS·JS 정적 자원 (`research/static/`) |
-| GET | `/data/*` | 데이터 JSON (`research/data/`) |
+| GET | `/data/*` | 데이터 파일 (`research/data/` — JSON·xlsx 포함) |
 | GET | `/api/meta` | 총 건수·수집일·분야 목록 |
 | GET | `/api/ideas` | 페이징 목록 (`page`, `page_size`, `division`, `subcategory`, `q`) |
 | POST | `/api/crawl` | 전체 재수집 + `modoo_all_ideas.json` + `research/data/` 갱신 |
@@ -246,8 +249,9 @@ kill $(lsof -ti :8000)
 1. `npm run dev` 로 서버 시작
 2. `http://127.0.0.1:8000` 접속
 3. **"최신 데이터 수집"** 버튼 클릭
-4. 완료 후 `research/data/` 자동 갱신됨
-5. git push로 Vercel 배포
+4. 완료 후 `research/data/ideas.json`, `analytics.json`, `insight.json` 자동 갱신
+5. 로컬에서 **엑셀 다운로드** → `research/data/ideas.xlsx` 로 저장 (덮어쓰기)
+6. git push로 Vercel 배포
 
 ### 방법 2 — 터미널 원라인
 
@@ -259,6 +263,24 @@ git add research/data/ && \
 git commit -m "data: 최신 아이디어 데이터 갱신" && \
 git push origin main
 ```
+
+### 웹용 엑셀 파일 업데이트 방법
+
+Vercel 배포 페이지의 엑셀 다운로드는 `research/data/ideas.xlsx` 정적 파일을 제공합니다.  
+최신 데이터 수집 후 아래 순서로 갱신합니다.
+
+```
+1. 로컬 FastAPI(http://127.0.0.1:8000)에서 엑셀 다운로드
+2. 다운받은 파일을 research/data/ideas.xlsx 로 덮어쓰기
+3. git add research/data/ideas.xlsx
+4. git commit -m "data: 엑셀 갱신"
+5. git push origin main
+```
+
+| 환경 | 엑셀 다운로드 방식 |
+|------|-------------------|
+| **로컬 FastAPI** | `/api/export/xlsx` → 서버에서 실시간 생성 |
+| **Vercel 정적** | `/data/ideas.xlsx` → 미리 올린 파일 다운로드 |
 
 ### Vercel 자동 배포 흐름
 
@@ -322,4 +344,4 @@ git push origin main
 
 ---
 
-*마지막 업데이트: 2026-04-08*
+*마지막 업데이트: 2026-04-08 (웹용 정적 엑셀 다운로드 추가)*
