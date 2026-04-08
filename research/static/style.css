@@ -187,6 +187,10 @@ main {
   display: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .toolbar {
   display: flex;
   justify-content: space-between;

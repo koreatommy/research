@@ -667,8 +667,8 @@
     "repeat_contributors": 1,
     "repeat_contributors_pct": 0.03,
     "contributor_by_division": {
-      "일반/기술": 3006,
-      "로컬": 651
+      "로컬": 651,
+      "일반/기술": 3006
     },
     "contributor_idea_distribution": {
       "1건": 3655,

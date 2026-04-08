@@ -150,9 +150,31 @@ async def api_ideas(
     }
 
 
+def _export_research_data(data: dict[str, Any]) -> None:
+    """크롤 결과를 research/data/ 에 정적 파일로 내보냅니다."""
+    from modoo_analytics import compute_analytics
+    from modoo_insight import compute_insight
+
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    with open(DATA_DIR / "ideas.json", "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    ideas = data.get("ideas") or []
+    crawled_at = data.get("crawled_at")
+
+    analytics = compute_analytics(ideas, crawled_at=crawled_at)
+    with open(DATA_DIR / "analytics.json", "w", encoding="utf-8") as f:
+        json.dump(analytics, f, ensure_ascii=False, indent=2)
+
+    insight = compute_insight(ideas, crawled_at=crawled_at)
+    with open(DATA_DIR / "insight.json", "w", encoding="utf-8") as f:
+        json.dump(insight, f, ensure_ascii=False, indent=2)
+
+
 @app.post("/api/crawl")
 async def api_crawl():
-    """최신 데이터 수집. 동시 요청 방지."""
+    """최신 데이터 수집 후 research/data/ 자동 export. 동시 요청 방지."""
     global ideas_data
 
     if crawl_lock.locked():
@@ -165,6 +187,7 @@ async def api_crawl():
             raise HTTPException(status_code=500, detail=str(e))
 
         ideas_data = result
+        await asyncio.to_thread(_export_research_data, result)
 
     return {
         "ok": True,

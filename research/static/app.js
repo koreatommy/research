@@ -408,6 +408,80 @@
       tbody.innerHTML =
         '<tr><td colspan="7" class="error">/data/ideas.json 을 불러올 수 없습니다.</td></tr>';
     }
+    detectApiMode();
+  }
+
+  async function detectApiMode() {
+    try {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 2000);
+      const res = await fetch("/api/meta", { signal: ctrl.signal });
+      clearTimeout(timer);
+      if (!res.ok) return;
+
+      const crawlBtn = document.getElementById("crawlBtn");
+      const excelBtn = document.getElementById("excelBtn");
+
+      if (crawlBtn) {
+        crawlBtn.classList.remove("hidden");
+        setupCrawlBtn(crawlBtn);
+      }
+      if (excelBtn) {
+        const link = document.createElement("a");
+        link.href = "/api/export/xlsx";
+        link.className = excelBtn.className.replace("btn-disabled", "").trim();
+        link.download = "";
+        link.textContent = "엑셀 다운로드";
+        excelBtn.replaceWith(link);
+      }
+    } catch (_) {
+      // FastAPI 없음 — 버튼 숨김 유지
+    }
+  }
+
+  function showToast(msg, type) {
+    const toast = document.getElementById("crawlToast");
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.className = `toast toast-${type}`;
+    setTimeout(() => { toast.className = "toast hidden"; }, 3000);
+  }
+
+  function setupCrawlBtn(btn) {
+    let running = false;
+    const btnText = document.getElementById("crawlBtnText");
+
+    btn.addEventListener("click", async () => {
+      if (running) return;
+      running = true;
+      btn.disabled = true;
+      if (btnText) btnText.textContent = "수집 중...";
+      btn.classList.add("loading");
+
+      try {
+        const res = await fetch("/api/crawl", { method: "POST" });
+        const data = await res.json();
+        if (res.ok) {
+          showToast(data.message || "수집 완료", "success");
+          const fresh = await fetch(DATA_URL + "?t=" + Date.now());
+          if (fresh.ok) {
+            ideasPayload = await fresh.json();
+            applyMetaFromPayload(ideasPayload);
+            currentPage = 1;
+            renderIdeas();
+          }
+        } else {
+          showToast(data.detail || "수집 실패", "error");
+        }
+      } catch (_) {
+        showToast("네트워크 오류", "error");
+      } finally {
+        running = false;
+        btn.disabled = false;
+        if (btnText) btnText.textContent = "최신 데이터 수집";
+        btn.classList.remove("loading");
+      }
+    });
   }
 
   init();
