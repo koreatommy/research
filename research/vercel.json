@@ -1,6 +1,8 @@
 {
   "rewrites": [
+    { "source": "/methodology", "destination": "/methodology.html" },
     { "source": "/analytics", "destination": "/analytics.html" },
-    { "source": "/insight", "destination": "/insight.html" }
+    { "source": "/insight", "destination": "/insight.html" },
+    { "source": "/idea10", "destination": "/startup_ideas_report_v2.html" }
   ]
 }

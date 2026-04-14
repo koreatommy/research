@@ -1,68 +1,68 @@
 {
   "meta": {
-    "total": 4874,
-    "crawled_at": "2026-04-13T18:21:36.607995",
+    "total": 4984,
+    "crawled_at": "2026-04-14T07:39:50.881161",
     "division_count": 2,
     "subcategory_count": 22,
-    "total_contributors": 4872,
+    "total_contributors": 4982,
     "date_range": {
       "min": "2026-03-25T21:00:00Z",
-      "max": "2026-04-13T09:18:46Z"
+      "max": "2026-04-13T22:24:07Z"
     }
   },
   "division_distribution": {
-    "일반/기술": 4020,
-    "로컬": 854
+    "일반/기술": 4107,
+    "로컬": 877
   },
   "subcategory_distribution": {
-    "라이프스타일": 812,
-    "F&B": 238,
-    "금융": 74,
-    "운영관리": 131,
-    "생활": 541,
-    "교육": 283,
-    "하드웨어": 104,
-    "농축·수산업": 123,
-    "IT": 1171,
-    "모빌리티": 87,
-    "기타": 378,
-    "뷰티": 40,
-    "유통/물류": 94,
-    "바이오/의료": 247,
-    "프롭테크": 40,
-    "에너지/자원": 150,
-    "미디어/엔터테인먼트": 127,
+    "에너지/자원": 151,
+    "IT": 1204,
+    "운영관리": 137,
+    "생활": 558,
+    "하드웨어": 107,
+    "라이프스타일": 827,
+    "F&B": 243,
+    "뷰티": 41,
+    "마케팅/PR": 52,
+    "기타": 387,
+    "농축·수산업": 127,
+    "바이오/의료": 250,
+    "모빌리티": 89,
+    "임팩트": 29,
+    "유통/물류": 95,
+    "미디어/엔터테인먼트": 129,
+    "프롭테크": 41,
+    "교육": 284,
+    "금융": 76,
     "네트워킹": 118,
     "패션": 35,
-    "마케팅/PR": 50,
-    "임팩트": 27,
     "재무": 4
   },
   "subcategory_by_division": {
     "일반/기술": {
-      "라이프스타일": 812,
-      "금융": 74,
-      "운영관리": 131,
-      "교육": 283,
-      "하드웨어": 104,
-      "농축·수산업": 123,
-      "IT": 1171,
-      "모빌리티": 87,
-      "기타": 378,
-      "유통/물류": 94,
-      "바이오/의료": 247,
-      "프롭테크": 40,
-      "에너지/자원": 150,
-      "미디어/엔터테인먼트": 127,
+      "에너지/자원": 151,
+      "IT": 1204,
+      "운영관리": 137,
+      "하드웨어": 107,
+      "라이프스타일": 827,
+      "마케팅/PR": 52,
+      "기타": 387,
+      "농축·수산업": 127,
+      "바이오/의료": 250,
+      "모빌리티": 89,
+      "임팩트": 29,
+      "유통/물류": 95,
+      "미디어/엔터테인먼트": 129,
+      "프롭테크": 41,
+      "교육": 284,
+      "금융": 76,
       "네트워킹": 118,
-      "마케팅/PR": 50,
-      "임팩트": 27,
       "재무": 4
     },
     "로컬": {
-      "F&B": 238,
-      "생활": 541,
-      "뷰티": 40,
+      "생활": 558,
+      "F&B": 243,
+      "뷰티": 41,
       "패션": 35
     }
   },
@@ -86,7 +86,7 @@
       },
       {
         "date": "2026-03-29",
-        "count": 150
+        "count": 149
       },
       {
         "date": "2026-03-30",
@@ -138,7 +138,7 @@
       },
       {
         "date": "2026-04-11",
-        "count": 174
+        "count": 175
       },
       {
         "date": "2026-04-12",
@@ -146,13 +146,13 @@
       },
       {
         "date": "2026-04-13",
-        "count": 167
+        "count": 277
       }
     ],
     "weekly": [
       {
         "week": "2026-W13",
-        "count": 1289
+        "count": 1288
       },
       {
         "week": "2026-W14",
@@ -160,27 +160,27 @@
       },
       {
         "week": "2026-W15",
-        "count": 1727
+        "count": 1728
       },
       {
         "week": "2026-W16",
-        "count": 167
+        "count": 277
       }
     ],
     "monthly": [
       {
         "month": "2026-03",
-        "count": 1958
+        "count": 1957
       },
       {
         "month": "2026-04",
-        "count": 2916
+        "count": 3027
       }
     ],
     "weekday": [
       {
         "day": "월",
-        "count": 786
+        "count": 896
       },
       {
         "day": "화",
@@ -200,11 +200,11 @@
       },
       {
         "day": "토",
-        "count": 452
+        "count": 453
       },
       {
         "day": "일",
-        "count": 422
+        "count": 421
       }
     ],
     "hourly": [
@@ -230,7 +230,7 @@
       },
       {
         "hour": 5,
-        "count": 358
+        "count": 357
       },
       {
         "hour": 6,
@@ -246,39 +246,39 @@
       },
       {
         "hour": 9,
-        "count": 254
+        "count": 265
       },
       {
         "hour": 10,
-        "count": 208
+        "count": 231
       },
       {
         "hour": 11,
-        "count": 177
+        "count": 193
       },
       {
         "hour": 12,
-        "count": 185
+        "count": 200
       },
       {
         "hour": 13,
-        "count": 199
+        "count": 209
       },
       {
         "hour": 14,
-        "count": 181
+        "count": 193
       },
       {
         "hour": 15,
-        "count": 112
+        "count": 120
       },
       {
         "hour": 16,
-        "count": 79
+        "count": 85
       },
       {
         "hour": 17,
-        "count": 48
+        "count": 51
       },
       {
         "hour": 18,
@@ -286,19 +286,19 @@
       },
       {
         "hour": 19,
-        "count": 31
+        "count": 34
       },
       {
         "hour": 20,
-        "count": 27
+        "count": 29
       },
       {
         "hour": 21,
-        "count": 54
+        "count": 55
       },
       {
         "hour": 22,
-        "count": 76
+        "count": 77
       },
       {
         "hour": 23,
@@ -309,11 +309,11 @@
       "일반/기술": [
         {
           "month": "2026-03",
-          "count": 1628
+          "count": 1627
         },
         {
           "month": "2026-04",
-          "count": 2392
+          "count": 2480
         }
       ],
       "로컬": [
@@ -323,45 +323,54 @@
         },
         {
           "month": "2026-04",
-          "count": 524
+          "count": 547
         }
       ]
     }
   },
   "likes_analysis": {
-    "total_likes": 10062,
+    "total_likes": 10259,
     "avg_likes": 2.06,
-    "max_likes": 93,
+    "max_likes": 182,
     "median_likes": 1.0,
     "likes_distribution": [
       {
         "range": "0",
-        "count": 191
+        "count": 258
       },
       {
         "range": "1",
-        "count": 2381
+        "count": 2414
       },
       {
         "range": "2-5",
-        "count": 2175
+        "count": 2183
       },
       {
         "range": "6-10",
-        "count": 68
+        "count": 70
       },
       {
         "range": "11-50",
-        "count": 50
+        "count": 49
       },
       {
         "range": "51+",
-        "count": 9
+        "count": 10
       }
     ],
     "top_liked_ideas": [
       {
-        "index": 4472,
+        "index": 254,
+        "summary": "카피라이트리셋(코리셋)으로 정부, 기업, 가계의 데이터 권리를 재정립하고 제3자 대항력으로 데이터를 보상 가능한 AI 자산으로 전환하는 경합형 ",
+        "division": "일반/기술",
+        "subcategory": "IT",
+        "nickname": "칸을라",
+        "likes": 182,
+        "created_at": "2026-04-13"
+      },
+      {
+        "index": 4582,
         "summary": "골든타임 10분, 잃어버린 것을 다시 찾는 하이퍼로컬 구조 플랫폼",
         "division": "일반/기술",
         "subcategory": "IT",
@@ -370,7 +379,7 @@
         "created_at": "2026-03-26"
       },
       {
-        "index": 3983,
+        "index": 4093,
         "summary": "(은퇴)시니어의 노하우를 'AI 멘토'로 구현하여 청년과 연결하고, 수익(제2의 연금)을 창출하는 세대 융합 솔루션",
         "division": "일반/기술",
         "subcategory": "IT",
@@ -379,7 +388,7 @@
         "created_at": "2026-03-27"
       },
       {
-        "index": 4424,
+        "index": 4534,
         "summary": "AI로 10분 단위의 삶의 맥락을 계획하고 기록하는 Life Engineering Platform \"gollog\" (Grid based Ordi",
         "division": "일반/기술",
         "subcategory": "라이프스타일",
@@ -388,16 +397,7 @@
         "created_at": "2026-03-26"
       },
       {
-        "index": 144,
-        "summary": "카피라이트리셋(코리셋)으로 정부, 기업, 가계의 데이터 권리를 재정립하고 제3자 대항력으로 데이터를 보상 가능한 AI 자산으로 전환하는 경합형 ",
-        "division": "일반/기술",
-        "subcategory": "IT",
-        "nickname": "칸을라",
-        "likes": 68,
-        "created_at": "2026-04-13"
-      },
-      {
-        "index": 2763,
+        "index": 2874,
         "summary": "눈이 쌓여도 약자의 발걸음을 지켜주는 다방향 경사 구조의 보행 안전 매트",
         "division": "일반/기술",
         "subcategory": "기타",
@@ -406,7 +406,16 @@
         "created_at": "2026-04-01"
       },
       {
-        "index": 3912,
+        "index": 4686,
+        "summary": "\"AI웨딩플래너\"가 결혼 준비의 시작부터 본식 당일까지의 스케줄링, 결혼예산에 맞게 AI웨딩플래너가 컨설팅,  스드메 매칭까지 수수료 0원으로 ",
+        "division": "일반/기술",
+        "subcategory": "라이프스타일",
+        "nickname": "박우성",
+        "likes": 62,
+        "created_at": "2026-03-26"
+      },
+      {
+        "index": 4022,
         "summary": "시니어가 마케팅을 배워 우리 동네 가게를 돕고 수익도 만드는 로컬 상생 창업 모델 기버스 게인 시니어",
         "division": "로컬",
         "subcategory": "생활",
@@ -415,16 +424,7 @@
         "created_at": "2026-03-27"
       },
       {
-        "index": 4576,
-        "summary": "\"AI웨딩플래너\"가 결혼 준비의 시작부터 본식 당일까지의 스케줄링, 결혼예산에 맞게 AI웨딩플래너가 컨설팅,  스드메 매칭까지 수수료 0원으로 ",
-        "division": "일반/기술",
-        "subcategory": "라이프스타일",
-        "nickname": "박우성",
-        "likes": 60,
-        "created_at": "2026-03-26"
-      },
-      {
-        "index": 2880,
+        "index": 2991,
         "summary": "영상 기반 AI 분석으로 배우·가수·모델 등 숨은 인재를 찾아 연결하는 캐스팅 플랫폼",
         "division": "일반/기술",
         "subcategory": "미디어/엔터테인먼트",
@@ -433,7 +433,7 @@
         "created_at": "2026-04-01"
       },
       {
-        "index": 4846,
+        "index": 4956,
         "summary": "“단독 임무가 도착했습니다.” 방향을 찾고 있는 당신을 위한, 여행을 경력으로 바꾸는 세계여행 프로젝트 <VECTOR>",
         "division": "일반/기술",
         "subcategory": "프롭테크",
@@ -442,7 +442,16 @@
         "created_at": "2026-03-25"
       },
       {
-        "index": 847,
+        "index": 2290,
+        "summary": "[3분 만에 완성되는 맞춤형 마케팅 릴스] 소상공인 대상 마케팅 릴스 제작 자동화 SaaS, ‘릴스탬프'",
+        "division": "일반/기술",
+        "subcategory": "IT",
+        "nickname": "한수민",
+        "likes": 51,
+        "created_at": "2026-04-03"
+      },
+      {
+        "index": 958,
         "summary": "제주도 폐배터리(R-ESS) 기반 괭생이모자반 통합 관리 및 에너지 자립화 '순환 경제' 플랫폼 구축",
         "division": "로컬",
         "subcategory": "생활",
@@ -451,16 +460,7 @@
         "created_at": "2026-04-10"
       },
       {
-        "index": 2179,
-        "summary": "[3분 만에 완성되는 맞춤형 마케팅 릴스] 소상공인 대상 마케팅 릴스 제작 자동화 SaaS, ‘릴스탬프'",
-        "division": "일반/기술",
-        "subcategory": "IT",
-        "nickname": "한수민",
-        "likes": 50,
-        "created_at": "2026-04-03"
-      },
-      {
-        "index": 4867,
+        "index": 4977,
         "summary": "PICO ZERO (자동차 정비사를 위한 통신 및 방전 AI 진단 솔루션 앱)CAN통신 및 방전 진단특화 피코제로",
         "division": "일반/기술",
         "subcategory": "모빌리티",
@@ -469,7 +469,7 @@
         "created_at": "2026-03-25"
       },
       {
-        "index": 1937,
+        "index": 2048,
         "summary": "해외 진출 기업과 IP 사무소를 위한 국가별 지식재산권 연차료 자동관리 및 글로벌 법무 전문가 매칭 플랫폼",
         "division": "일반/기술",
         "subcategory": "네트워킹",
@@ -478,7 +478,7 @@
         "created_at": "2026-04-05"
       },
       {
-        "index": 4687,
+        "index": 4797,
         "summary": "실증 데이터 기반 AI 건강행동 패턴 분석 및 맞춤형 방문 재활운동 코칭 솔루션",
         "division": "일반/기술",
         "subcategory": "IT",
@@ -487,7 +487,7 @@
         "created_at": "2026-03-26"
       },
       {
-        "index": 4859,
+        "index": 4969,
         "summary": "AI 기반 게임뉴스 자동 발행 + 스트리머 콜라보 중개 플랫폼 'GAMEBOY.KR'",
         "division": "일반/기술",
         "subcategory": "IT",
@@ -498,121 +498,121 @@
     ],
     "likes_by_division": {
       "일반/기술": {
-        "total": 8336,
-        "avg": 2.07,
-        "count": 4020
+        "total": 8525,
+        "avg": 2.08,
+        "count": 4107
       },
       "로컬": {
-        "total": 1726,
-        "avg": 2.02,
-        "count": 854
+        "total": 1734,
+        "avg": 1.98,
+        "count": 877
       }
     },
     "likes_by_subcategory": {
-      "라이프스타일": {
-        "total": 1630,
-        "avg": 2.01,
-        "count": 812
-      },
-      "F&B": {
-        "total": 466,
-        "avg": 1.96,
-        "count": 238
-      },
-      "금융": {
-        "total": 120,
-        "avg": 1.62,
-        "count": 74
-      },
-      "운영관리": {
-        "total": 227,
-        "avg": 1.73,
-        "count": 131
-      },
-      "생활": {
-        "total": 1114,
-        "avg": 2.06,
-        "count": 541
-      },
-      "교육": {
-        "total": 526,
-        "avg": 1.86,
-        "count": 283
-      },
-      "하드웨어": {
-        "total": 214,
-        "avg": 2.06,
-        "count": 104
-      },
-      "농축·수산업": {
-        "total": 233,
-        "avg": 1.89,
-        "count": 123
+      "에너지/자원": {
+        "total": 295,
+        "avg": 1.95,
+        "count": 151
       },
       "IT": {
-        "total": 2612,
-        "avg": 2.23,
-        "count": 1171
+        "total": 2754,
+        "avg": 2.29,
+        "count": 1204
       },
-      "모빌리티": {
-        "total": 211,
-        "avg": 2.43,
-        "count": 87
+      "운영관리": {
+        "total": 228,
+        "avg": 1.66,
+        "count": 137
       },
-      "기타": {
-        "total": 692,
-        "avg": 1.83,
-        "count": 378
+      "생활": {
+        "total": 1120,
+        "avg": 2.01,
+        "count": 558
+      },
+      "하드웨어": {
+        "total": 223,
+        "avg": 2.08,
+        "count": 107
+      },
+      "라이프스타일": {
+        "total": 1644,
+        "avg": 1.99,
+        "count": 827
+      },
+      "F&B": {
+        "total": 468,
+        "avg": 1.93,
+        "count": 243
       },
       "뷰티": {
         "total": 79,
-        "avg": 1.98,
-        "count": 40
+        "avg": 1.93,
+        "count": 41
       },
-      "유통/물류": {
-        "total": 167,
-        "avg": 1.78,
-        "count": 94
+      "마케팅/PR": {
+        "total": 93,
+        "avg": 1.79,
+        "count": 52
+      },
+      "기타": {
+        "total": 699,
+        "avg": 1.81,
+        "count": 387
+      },
+      "농축·수산업": {
+        "total": 237,
+        "avg": 1.87,
+        "count": 127
       },
       "바이오/의료": {
-        "total": 526,
-        "avg": 2.13,
-        "count": 247
+        "total": 530,
+        "avg": 2.12,
+        "count": 250
       },
-      "프롭테크": {
-        "total": 114,
-        "avg": 2.85,
-        "count": 40
+      "모빌리티": {
+        "total": 211,
+        "avg": 2.37,
+        "count": 89
       },
-      "에너지/자원": {
-        "total": 299,
-        "avg": 1.99,
-        "count": 150
+      "임팩트": {
+        "total": 77,
+        "avg": 2.66,
+        "count": 29
+      },
+      "유통/물류": {
+        "total": 171,
+        "avg": 1.8,
+        "count": 95
       },
       "미디어/엔터테인먼트": {
         "total": 307,
-        "avg": 2.42,
-        "count": 127
+        "avg": 2.38,
+        "count": 129
+      },
+      "프롭테크": {
+        "total": 114,
+        "avg": 2.78,
+        "count": 41
+      },
+      "교육": {
+        "total": 530,
+        "avg": 1.87,
+        "count": 284
+      },
+      "금융": {
+        "total": 121,
+        "avg": 1.59,
+        "count": 76
       },
       "네트워킹": {
-        "total": 282,
-        "avg": 2.39,
+        "total": 283,
+        "avg": 2.4,
         "count": 118
       },
       "패션": {
         "total": 67,
         "avg": 1.91,
         "count": 35
-      },
-      "마케팅/PR": {
-        "total": 92,
-        "avg": 1.84,
-        "count": 50
-      },
-      "임팩트": {
-        "total": 76,
-        "avg": 2.81,
-        "count": 27
       },
       "재무": {
         "total": 8,
@@ -622,7 +622,7 @@
     }
   },
   "contributor_analysis": {
-    "total_contributors": 4872,
+    "total_contributors": 4982,
     "ideas_per_contributor_avg": 1.0,
     "top_contributors": [
       {
@@ -630,98 +630,98 @@
         "count": 3
       },
       {
-        "nickname": "유랭이",
+        "nickname": "썬샤인",
         "count": 1
       },
       {
-        "nickname": "우기78",
+        "nickname": "카이나a",
         "count": 1
       },
       {
-        "nickname": "moa",
+        "nickname": "행당곰",
         "count": 1
       },
       {
-        "nickname": "dua",
+        "nickname": "김진석_제니스",
         "count": 1
       },
       {
-        "nickname": "병헌",
+        "nickname": "조현진",
         "count": 1
       },
       {
-        "nickname": "uniqueboy",
+        "nickname": "nexus_os",
         "count": 1
       },
       {
-        "nickname": "전원주택생활용품",
+        "nickname": "tenmil",
         "count": 1
       },
       {
-        "nickname": "yon",
+        "nickname": "세탁물서비스",
         "count": 1
       },
       {
-        "nickname": "쫑구",
+        "nickname": "겨울이네다",
         "count": 1
       },
       {
-        "nickname": "샛별김동규화재뚝",
+        "nickname": "이근종",
         "count": 1
       },
       {
-        "nickname": "sos",
+        "nickname": "김석용",
         "count": 1
       },
       {
-        "nickname": "dnf",
+        "nickname": "yunchic",
         "count": 1
       },
       {
-        "nickname": "마진컷",
+        "nickname": "김영일",
         "count": 1
       },
       {
-        "nickname": "eri",
+        "nickname": "행복한뇨끼네집",
         "count": 1
       }
     ],
-    "single_idea_contributors": 4871,
+    "single_idea_contributors": 4981,
     "single_idea_contributors_pct": 99.98,
     "repeat_contributors": 1,
     "repeat_contributors_pct": 0.02,
     "contributor_by_division": {
-      "일반/기술": 4019,
-      "로컬": 854
+      "일반/기술": 4106,
+      "로컬": 877
     },
     "contributor_idea_distribution": {
-      "1건": 4871,
+      "1건": 4981,
       "2-3건": 1
     }
   },
   "cross_analysis": {
     "subcategory_avg_likes": {
-      "라이프스타일": 2.01,
-      "F&B": 1.96,
-      "금융": 1.62,
-      "운영관리": 1.73,
-      "생활": 2.06,
-      "교육": 1.86,
-      "하드웨어": 2.06,
-      "농축·수산업": 1.89,
-      "IT": 2.23,
-      "모빌리티": 2.43,
-      "기타": 1.83,
-      "뷰티": 1.98,
-      "유통/물류": 1.78,
-      "바이오/의료": 2.13,
-      "프롭테크": 2.85,
-      "에너지/자원": 1.99,
-      "미디어/엔터테인먼트": 2.42,
-      "네트워킹": 2.39,
+      "에너지/자원": 1.95,
+      "IT": 2.29,
+      "운영관리": 1.66,
+      "생활": 2.01,
+      "하드웨어": 2.08,
+      "라이프스타일": 1.99,
+      "F&B": 1.93,
+      "뷰티": 1.93,
+      "마케팅/PR": 1.79,
+      "기타": 1.81,
+      "농축·수산업": 1.87,
+      "바이오/의료": 2.12,
+      "모빌리티": 2.37,
+      "임팩트": 2.66,
+      "유통/물류": 1.8,
+      "미디어/엔터테인먼트": 2.38,
+      "프롭테크": 2.78,
+      "교육": 1.87,
+      "금융": 1.59,
+      "네트워킹": 2.4,
       "패션": 1.91,
-      "마케팅/PR": 1.84,
-      "임팩트": 2.81,
       "재무": 2.0
     },
     "heatmap_data": [
@@ -733,7 +733,7 @@
       {
         "subcategory": "F&B",
         "month": "2026-04",
-        "count": 150
+        "count": 155
       },
       {
         "subcategory": "IT",
@@ -743,7 +743,7 @@
       {
         "subcategory": "IT",
         "month": "2026-04",
-        "count": 630
+        "count": 663
       },
       {
         "subcategory": "교육",
@@ -753,7 +753,7 @@
       {
         "subcategory": "교육",
         "month": "2026-04",
-        "count": 164
+        "count": 165
       },
       {
         "subcategory": "금융",
@@ -763,7 +763,7 @@
       {
         "subcategory": "금융",
         "month": "2026-04",
-        "count": 44
+        "count": 46
       },
       {
         "subcategory": "기타",
@@ -773,7 +773,7 @@
       {
         "subcategory": "기타",
         "month": "2026-04",
-        "count": 257
+        "count": 266
       },
       {
         "subcategory": "네트워킹",
@@ -793,7 +793,7 @@
       {
         "subcategory": "농축·수산업",
         "month": "2026-04",
-        "count": 74
+        "count": 78
       },
       {
         "subcategory": "라이프스타일",
@@ -803,7 +803,7 @@
       {
         "subcategory": "라이프스타일",
         "month": "2026-04",
-        "count": 540
+        "count": 555
       },
       {
         "subcategory": "마케팅/PR",
@@ -813,7 +813,7 @@
       {
         "subcategory": "마케팅/PR",
         "month": "2026-04",
-        "count": 29
+        "count": 31
       },
       {
         "subcategory": "모빌리티",
@@ -823,7 +823,7 @@
       {
         "subcategory": "모빌리티",
         "month": "2026-04",
-        "count": 53
+        "count": 55
       },
       {
         "subcategory": "미디어/엔터테인먼트",
@@ -833,7 +833,7 @@
       {
         "subcategory": "미디어/엔터테인먼트",
         "month": "2026-04",
-        "count": 76
+        "count": 78
       },
       {
         "subcategory": "바이오/의료",
@@ -843,7 +843,7 @@
       {
         "subcategory": "바이오/의료",
         "month": "2026-04",
-        "count": 126
+        "count": 129
       },
       {
         "subcategory": "뷰티",
@@ -853,7 +853,7 @@
       {
         "subcategory": "뷰티",
         "month": "2026-04",
-        "count": 19
+        "count": 20
       },
       {
         "subcategory": "생활",
@@ -863,17 +863,17 @@
       {
         "subcategory": "생활",
         "month": "2026-04",
-        "count": 333
+        "count": 350
       },
       {
         "subcategory": "에너지/자원",
         "month": "2026-03",
-        "count": 65
+        "count": 64
       },
       {
         "subcategory": "에너지/자원",
         "month": "2026-04",
-        "count": 85
+        "count": 87
       },
       {
         "subcategory": "운영관리",
@@ -883,7 +883,7 @@
       {
         "subcategory": "운영관리",
         "month": "2026-04",
-        "count": 77
+        "count": 83
       },
       {
         "subcategory": "유통/물류",
@@ -893,7 +893,7 @@
       {
         "subcategory": "유통/물류",
         "month": "2026-04",
-        "count": 56
+        "count": 57
       },
       {
         "subcategory": "임팩트",
@@ -903,7 +903,7 @@
       {
         "subcategory": "임팩트",
         "month": "2026-04",
-        "count": 14
+        "count": 16
       },
       {
         "subcategory": "재무",
@@ -933,7 +933,7 @@
       {
         "subcategory": "프롭테크",
         "month": "2026-04",
-        "count": 22
+        "count": 23
       },
       {
         "subcategory": "하드웨어",
@@ -943,7 +943,7 @@
       {
         "subcategory": "하드웨어",
         "month": "2026-04",
-        "count": 70
+        "count": 73
       }
     ],
     "all_months": [
@@ -952,17 +952,17 @@
     ],
     "division_like_range": {
       "일반/기술": {
-        "0": 158,
-        "1": 1977,
-        "2-5": 1780,
-        "51+": 8,
-        "6-10": 54,
-        "11-50": 43
+        "0": 209,
+        "1": 2002,
+        "6-10": 56,
+        "2-5": 1789,
+        "51+": 9,
+        "11-50": 42
       },
       "로컬": {
-        "0": 33,
-        "1": 404,
-        "2-5": 395,
+        "0": 49,
+        "1": 412,
+        "2-5": 394,
         "11-50": 7,
         "6-10": 14,
         "51+": 1
@@ -970,32 +970,32 @@
     },
     "subcategory_contributor_diversity": {
       "F&B": {
-        "total_ideas": 238,
-        "unique_contributors": 238,
-        "hhi": 0.0042,
-        "diversity_index": 0.9958
+        "total_ideas": 243,
+        "unique_contributors": 243,
+        "hhi": 0.0041,
+        "diversity_index": 0.9959
       },
       "IT": {
-        "total_ideas": 1171,
-        "unique_contributors": 1171,
-        "hhi": 0.0009,
-        "diversity_index": 0.9991
+        "total_ideas": 1204,
+        "unique_contributors": 1204,
+        "hhi": 0.0008,
+        "diversity_index": 0.9992
       },
       "교육": {
-        "total_ideas": 283,
-        "unique_contributors": 283,
+        "total_ideas": 284,
+        "unique_contributors": 284,
         "hhi": 0.0035,
         "diversity_index": 0.9965
       },
       "금융": {
-        "total_ideas": 74,
-        "unique_contributors": 74,
-        "hhi": 0.0135,
-        "diversity_index": 0.9865
+        "total_ideas": 76,
+        "unique_contributors": 76,
+        "hhi": 0.0132,
+        "diversity_index": 0.9868
       },
       "기타": {
-        "total_ideas": 378,
-        "unique_contributors": 378,
+        "total_ideas": 387,
+        "unique_contributors": 387,
         "hhi": 0.0026,
         "diversity_index": 0.9974
       },
@@ -1006,76 +1006,76 @@
         "diversity_index": 0.9915
       },
       "농축·수산업": {
-        "total_ideas": 123,
-        "unique_contributors": 123,
-        "hhi": 0.0081,
-        "diversity_index": 0.9919
-      },
-      "라이프스타일": {
-        "total_ideas": 812,
-        "unique_contributors": 812,
-        "hhi": 0.0012,
-        "diversity_index": 0.9988
-      },
-      "마케팅/PR": {
-        "total_ideas": 50,
-        "unique_contributors": 50,
-        "hhi": 0.02,
-        "diversity_index": 0.98
-      },
-      "모빌리티": {
-        "total_ideas": 87,
-        "unique_contributors": 87,
-        "hhi": 0.0115,
-        "diversity_index": 0.9885
-      },
-      "미디어/엔터테인먼트": {
         "total_ideas": 127,
         "unique_contributors": 127,
         "hhi": 0.0079,
         "diversity_index": 0.9921
       },
+      "라이프스타일": {
+        "total_ideas": 827,
+        "unique_contributors": 827,
+        "hhi": 0.0012,
+        "diversity_index": 0.9988
+      },
+      "마케팅/PR": {
+        "total_ideas": 52,
+        "unique_contributors": 52,
+        "hhi": 0.0192,
+        "diversity_index": 0.9808
+      },
+      "모빌리티": {
+        "total_ideas": 89,
+        "unique_contributors": 89,
+        "hhi": 0.0112,
+        "diversity_index": 0.9888
+      },
+      "미디어/엔터테인먼트": {
+        "total_ideas": 129,
+        "unique_contributors": 129,
+        "hhi": 0.0078,
+        "diversity_index": 0.9922
+      },
       "바이오/의료": {
-        "total_ideas": 247,
-        "unique_contributors": 247,
+        "total_ideas": 250,
+        "unique_contributors": 250,
         "hhi": 0.004,
         "diversity_index": 0.996
       },
       "뷰티": {
-        "total_ideas": 40,
-        "unique_contributors": 40,
-        "hhi": 0.025,
-        "diversity_index": 0.975
+        "total_ideas": 41,
+        "unique_contributors": 41,
+        "hhi": 0.0244,
+        "diversity_index": 0.9756
       },
       "생활": {
-        "total_ideas": 541,
-        "unique_contributors": 541,
+        "total_ideas": 558,
+        "unique_contributors": 558,
         "hhi": 0.0018,
         "diversity_index": 0.9982
       },
       "에너지/자원": {
-        "total_ideas": 150,
-        "unique_contributors": 150,
-        "hhi": 0.0067,
-        "diversity_index": 0.9933
+        "total_ideas": 151,
+        "unique_contributors": 151,
+        "hhi": 0.0066,
+        "diversity_index": 0.9934
       },
       "운영관리": {
-        "total_ideas": 131,
-        "unique_contributors": 131,
-        "hhi": 0.0076,
-        "diversity_index": 0.9924
+        "total_ideas": 137,
+        "unique_contributors": 137,
+        "hhi": 0.0073,
+        "diversity_index": 0.9927
       },
       "유통/물류": {
-        "total_ideas": 94,
-        "unique_contributors": 94,
-        "hhi": 0.0106,
-        "diversity_index": 0.9894
+        "total_ideas": 95,
+        "unique_contributors": 95,
+        "hhi": 0.0105,
+        "diversity_index": 0.9895
       },
       "임팩트": {
-        "total_ideas": 27,
-        "unique_contributors": 27,
-        "hhi": 0.037,
-        "diversity_index": 0.963
+        "total_ideas": 29,
+        "unique_contributors": 29,
+        "hhi": 0.0345,
+        "diversity_index": 0.9655
       },
       "재무": {
         "total_ideas": 4,
@@ -1090,16 +1090,16 @@
         "diversity_index": 0.9714
       },
       "프롭테크": {
-        "total_ideas": 40,
-        "unique_contributors": 40,
-        "hhi": 0.025,
-        "diversity_index": 0.975
+        "total_ideas": 41,
+        "unique_contributors": 41,
+        "hhi": 0.0244,
+        "diversity_index": 0.9756
       },
       "하드웨어": {
-        "total_ideas": 104,
-        "unique_contributors": 104,
-        "hhi": 0.0096,
-        "diversity_index": 0.9904
+        "total_ideas": 107,
+        "unique_contributors": 107,
+        "hhi": 0.0093,
+        "diversity_index": 0.9907
       }
     },
     "hour_by_division": {
@@ -1114,7 +1114,7 @@
         },
         {
           "hour": 2,
-          "count": 64
+          "count": 63
         },
         {
           "hour": 3,
@@ -1142,39 +1142,39 @@
         },
         {
           "hour": 9,
-          "count": 45
+          "count": 47
         },
         {
           "hour": 10,
-          "count": 38
+          "count": 42
         },
         {
           "hour": 11,
-          "count": 26
+          "count": 29
         },
         {
           "hour": 12,
-          "count": 34
+          "count": 38
         },
         {
           "hour": 13,
-          "count": 28
-        },
-        {
-          "hour": 14,
           "count": 31
         },
         {
+          "hour": 14,
+          "count": 33
+        },
+        {
           "hour": 15,
-          "count": 23
+          "count": 24
         },
         {
           "hour": 16,
-          "count": 14
+          "count": 17
         },
         {
           "hour": 17,
-          "count": 7
+          "count": 8
         },
         {
           "hour": 18,
@@ -1182,7 +1182,7 @@
         },
         {
           "hour": 19,
-          "count": 5
+          "count": 6
         },
         {
           "hour": 20,
@@ -1212,7 +1212,7 @@
         },
         {
           "hour": 2,
-          "count": 288
+          "count": 289
         },
         {
           "hour": 3,
@@ -1224,7 +1224,7 @@
         },
         {
           "hour": 5,
-          "count": 304
+          "count": 303
         },
         {
           "hour": 6,
@@ -1240,39 +1240,39 @@
         },
         {
           "hour": 9,
-          "count": 209
+          "count": 218
         },
         {
           "hour": 10,
-          "count": 170
+          "count": 189
         },
         {
           "hour": 11,
-          "count": 151
+          "count": 164
         },
         {
           "hour": 12,
-          "count": 151
+          "count": 162
         },
         {
           "hour": 13,
-          "count": 171
+          "count": 178
         },
         {
           "hour": 14,
-          "count": 150
+          "count": 160
         },
         {
           "hour": 15,
-          "count": 89
+          "count": 96
         },
         {
           "hour": 16,
-          "count": 65
+          "count": 68
         },
         {
           "hour": 17,
-          "count": 41
+          "count": 43
         },
         {
           "hour": 18,
@@ -1280,19 +1280,19 @@
         },
         {
           "hour": 19,
-          "count": 26
+          "count": 28
         },
         {
           "hour": 20,
-          "count": 23
+          "count": 25
         },
         {
           "hour": 21,
-          "count": 36
+          "count": 37
         },
         {
           "hour": 22,
-          "count": 61
+          "count": 62
         },
         {
           "hour": 23,
@@ -1305,43 +1305,43 @@
     "keyword_frequency": [
       {
         "word": "스마트",
-        "count": 208
+        "count": 212
       },
       {
         "word": "맞춤형",
-        "count": 206
+        "count": 209
       },
       {
         "word": "솔루션",
-        "count": 203
+        "count": 208
       },
       {
         "word": "지역",
-        "count": 143
+        "count": 147
       },
       {
         "word": "활용한",
-        "count": 141
+        "count": 142
       },
       {
         "word": "나만의",
-        "count": 132
+        "count": 134
       },
       {
         "word": "통합",
-        "count": 130
+        "count": 132
       },
       {
         "word": "개발",
-        "count": 128
+        "count": 131
       },
       {
         "word": "데이터",
-        "count": 125
+        "count": 126
       },
       {
         "word": "로컬",
-        "count": 122
+        "count": 124
       },
       {
         "word": "관리",
@@ -1349,42 +1349,46 @@
       },
       {
         "word": "실시간",
-        "count": 119
+        "count": 120
       },
       {
         "word": "만드는",
-        "count": 108
+        "count": 113
       },
       {
         "word": "디지털",
-        "count": 106
+        "count": 108
       },
       {
         "word": "자동",
-        "count": 104
-      },
-      {
-        "word": "브랜드",
-        "count": 98
+        "count": 107
       },
       {
         "word": "매칭",
-        "count": 97
+        "count": 100
       },
       {
         "word": "글로벌",
-        "count": 94
+        "count": 99
       },
       {
-        "word": "제공하는",
-        "count": 90
+        "word": "브랜드",
+        "count": 99
       },
       {
         "word": "사업",
-        "count": 88
+        "count": 93
+      },
+      {
+        "word": "제공하는",
+        "count": 92
       },
       {
         "word": "도전",
+        "count": 88
+      },
+      {
+        "word": "연결하는",
         "count": 86
       },
       {
@@ -1392,15 +1396,15 @@
         "count": 86
       },
       {
-        "word": "연결하는",
-        "count": 83
+        "word": "자동화",
+        "count": 82
       },
       {
         "word": "제작",
         "count": 82
       },
       {
-        "word": "자동화",
+        "word": "개인",
         "count": 80
       },
       {
@@ -1408,31 +1412,35 @@
         "count": 78
       },
       {
-        "word": "개인",
-        "count": 77
+        "word": "프리미엄",
+        "count": 73
+      },
+      {
+        "word": "가능한",
+        "count": 73
       },
       {
         "word": "기반으로",
         "count": 72
       },
       {
-        "word": "가능한",
-        "count": 72
+        "word": "분석",
+        "count": 70
       },
       {
         "word": "기반의",
         "count": 70
       },
       {
-        "word": "프리미엄",
-        "count": 70
-      },
-      {
-        "word": "분석",
-        "count": 69
+        "word": "공간",
+        "count": 67
       },
       {
         "word": "이용한",
+        "count": 67
+      },
+      {
+        "word": "결합한",
         "count": 65
       },
       {
@@ -1440,16 +1448,20 @@
         "count": 64
       },
       {
-        "word": "결합한",
+        "word": "데이터를",
         "count": 63
       },
       {
-        "word": "데이터를",
+        "word": "돕는",
+        "count": 63
+      },
+      {
+        "word": "창업",
         "count": 62
       },
       {
-        "word": "공간",
-        "count": 61
+        "word": "케어",
+        "count": 60
       },
       {
         "word": "직접",
@@ -1460,20 +1472,12 @@
         "count": 60
       },
       {
-        "word": "창업",
-        "count": 60
-      },
-      {
-        "word": "돕는",
-        "count": 60
-      },
-      {
-        "word": "케어",
+        "word": "전용",
         "count": 59
       },
       {
-        "word": "전용",
-        "count": 58
+        "word": "반려동물",
+        "count": 56
       },
       {
         "word": "누구나",
@@ -1481,30 +1485,34 @@
       },
       {
         "word": "운영",
-        "count": 54
-      },
-      {
-        "word": "자동으로",
-        "count": 52
-      },
-      {
-        "word": "카페",
-        "count": 52
-      },
-      {
-        "word": "기술을",
-        "count": 52
-      },
-      {
-        "word": "반려동물",
-        "count": 52
-      },
-      {
-        "word": "시니어",
-        "count": 51
+        "count": 55
       },
       {
         "word": "친환경",
+        "count": 54
+      },
+      {
+        "word": "기술을",
+        "count": 53
+      },
+      {
+        "word": "자동으로",
+        "count": 53
+      },
+      {
+        "word": "카페",
+        "count": 53
+      },
+      {
+        "word": "시니어",
+        "count": 52
+      },
+      {
+        "word": "학습",
+        "count": 51
+      },
+      {
+        "word": "기술",
         "count": 51
       },
       {
@@ -1512,16 +1520,20 @@
         "count": 51
       },
       {
-        "word": "기술",
-        "count": 50
-      },
-      {
-        "word": "학습",
+        "word": "시간",
         "count": 49
       },
       {
         "word": "구독",
-        "count": 48
+        "count": 49
+      },
+      {
+        "word": "구축",
+        "count": 47
+      },
+      {
+        "word": "커뮤니티",
+        "count": 47
       },
       {
         "word": "정보",
@@ -1530,18 +1542,6 @@
       {
         "word": "재활",
         "count": 47
-      },
-      {
-        "word": "여행",
-        "count": 47
-      },
-      {
-        "word": "해결하는",
-        "count": 46
-      },
-      {
-        "word": "시간",
-        "count": 46
       }
     ],
     "keyword_by_subcategory": {
@@ -1556,11 +1556,11 @@
         },
         {
           "word": "활용한",
-          "count": 19
+          "count": 20
         },
         {
           "word": "디저트",
-          "count": 18
+          "count": 20
         },
         {
           "word": "브랜드",
@@ -1583,6 +1583,10 @@
           "count": 10
         },
         {
+          "word": "이용한",
+          "count": 9
+        },
+        {
           "word": "지역의",
           "count": 9
         },
@@ -1599,10 +1603,6 @@
           "count": 8
         },
         {
-          "word": "이용한",
-          "count": 8
-        },
-        {
           "word": "만든",
           "count": 8
         }
@@ -1610,23 +1610,23 @@
       "IT": [
         {
           "word": "솔루션",
-          "count": 70
+          "count": 71
         },
         {
           "word": "데이터",
-          "count": 60
+          "count": 61
         },
         {
           "word": "실시간",
-          "count": 56
+          "count": 57
         },
         {
           "word": "맞춤형",
-          "count": 53
+          "count": 55
         },
         {
           "word": "자동",
-          "count": 51
+          "count": 53
         },
         {
           "word": "관리",
@@ -1634,39 +1634,39 @@
         },
         {
           "word": "통합",
-          "count": 48
+          "count": 49
         },
         {
           "word": "자동화",
-          "count": 47
-        },
-        {
-          "word": "스마트",
-          "count": 44
+          "count": 48
         },
         {
           "word": "디지털",
-          "count": 44
+          "count": 46
         },
         {
-          "word": "데이터를",
-          "count": 36
+          "word": "스마트",
+          "count": 45
         },
         {
           "word": "매칭",
-          "count": 35
+          "count": 38
+        },
+        {
+          "word": "데이터를",
+          "count": 37
         },
         {
           "word": "글로벌",
-          "count": 34
+          "count": 37
         },
         {
           "word": "제공하는",
-          "count": 33
+          "count": 34
         },
         {
-          "word": "분석",
-          "count": 31
+          "word": "개인",
+          "count": 33
         }
       ],
       "교육": [
@@ -1796,27 +1796,27 @@
       "기타": [
         {
           "word": "나만의",
-          "count": 20
+          "count": 21
+        },
+        {
+          "word": "도전",
+          "count": 15
         },
         {
           "word": "스마트",
           "count": 15
         },
         {
-          "word": "도전",
+          "word": "솔루션",
           "count": 14
         },
         {
-          "word": "솔루션",
+          "word": "사업",
           "count": 13
         },
         {
           "word": "맞춤형",
           "count": 13
-        },
-        {
-          "word": "사업",
-          "count": 12
         },
         {
           "word": "브랜드",
@@ -1851,7 +1851,7 @@
           "count": 8
         },
         {
-          "word": "실시간",
+          "word": "개발",
           "count": 7
         }
       ],
@@ -1928,7 +1928,7 @@
         },
         {
           "word": "사업",
-          "count": 9
+          "count": 11
         },
         {
           "word": "스마트",
@@ -1936,7 +1936,7 @@
         },
         {
           "word": "지역",
-          "count": 6
+          "count": 7
         },
         {
           "word": "농업",
@@ -1953,6 +1953,10 @@
         {
           "word": "기술을",
           "count": 6
+        },
+        {
+          "word": "구축",
+          "count": 5
         },
         {
           "word": "식품",
@@ -1972,10 +1976,6 @@
         },
         {
           "word": "생산",
-          "count": 5
-        },
-        {
-          "word": "프리미엄",
           "count": 5
         }
       ],
@@ -1998,7 +1998,7 @@
         },
         {
           "word": "나만의",
-          "count": 24
+          "count": 25
         },
         {
           "word": "디지털",
@@ -2021,30 +2021,30 @@
           "count": 18
         },
         {
+          "word": "만드는",
+          "count": 17
+        },
+        {
           "word": "구독",
           "count": 17
+        },
+        {
+          "word": "개발",
+          "count": 16
         },
         {
           "word": "관리",
           "count": 16
         },
         {
-          "word": "만드는",
-          "count": 16
-        },
-        {
-          "word": "개발",
-          "count": 15
-        },
-        {
           "word": "자동",
-          "count": 14
+          "count": 15
         }
       ],
       "마케팅/PR": [
         {
           "word": "마케팅",
-          "count": 10
+          "count": 11
         },
         {
           "word": "만드는",
@@ -2106,14 +2106,14 @@
       "모빌리티": [
         {
           "word": "스마트",
-          "count": 9
-        },
-        {
-          "word": "안전",
-          "count": 7
+          "count": 10
         },
         {
           "word": "자동차",
+          "count": 8
+        },
+        {
+          "word": "안전",
           "count": 7
         },
         {
@@ -2230,7 +2230,7 @@
       "바이오/의료": [
         {
           "word": "스마트",
-          "count": 32
+          "count": 33
         },
         {
           "word": "재활",
@@ -2261,6 +2261,10 @@
           "count": 9
         },
         {
+          "word": "돕는",
+          "count": 8
+        },
+        {
           "word": "환자",
           "count": 8
         },
@@ -2273,20 +2277,16 @@
           "count": 8
         },
         {
+          "word": "치료",
+          "count": 7
+        },
+        {
+          "word": "웨어러블",
+          "count": 7
+        },
+        {
           "word": "의료",
           "count": 7
-        },
-        {
-          "word": "돕는",
-          "count": 7
-        },
-        {
-          "word": "디지털",
-          "count": 7
-        },
-        {
-          "word": "치료",
-          "count": 6
         }
       ],
       "뷰티": [
@@ -2299,16 +2299,20 @@
           "count": 6
         },
         {
-          "word": "피부",
-          "count": 4
+          "word": "뷰티",
+          "count": 5
         },
         {
-          "word": "뷰티",
+          "word": "피부",
           "count": 4
         },
         {
           "word": "브랜드",
           "count": 4
+        },
+        {
+          "word": "솔루션",
+          "count": 3
         },
         {
           "word": "제품",
@@ -2345,32 +2349,28 @@
         {
           "word": "기능성",
           "count": 2
-        },
-        {
-          "word": "선케어",
-          "count": 2
         }
       ],
       "생활": [
         {
           "word": "로컬",
-          "count": 58
+          "count": 60
         },
         {
           "word": "지역",
-          "count": 51
+          "count": 53
         },
         {
           "word": "맞춤형",
-          "count": 22
+          "count": 23
         },
         {
           "word": "공간",
-          "count": 21
+          "count": 23
         },
         {
           "word": "나만의",
-          "count": 20
+          "count": 21
         },
         {
           "word": "창업",
@@ -2381,11 +2381,19 @@
           "count": 18
         },
         {
-          "word": "동네",
+          "word": "만드는",
           "count": 17
         },
         {
           "word": "연결하는",
+          "count": 17
+        },
+        {
+          "word": "동네",
+          "count": 17
+        },
+        {
+          "word": "결합한",
           "count": 16
         },
         {
@@ -2393,30 +2401,22 @@
           "count": 16
         },
         {
-          "word": "결합한",
+          "word": "스마트",
+          "count": 15
+        },
+        {
+          "word": "카페",
           "count": 15
         },
         {
           "word": "제주",
           "count": 15
-        },
-        {
-          "word": "제작",
-          "count": 15
-        },
-        {
-          "word": "만드는",
-          "count": 14
-        },
-        {
-          "word": "카페",
-          "count": 14
         }
       ],
       "에너지/자원": [
         {
           "word": "친환경",
-          "count": 17
+          "count": 18
         },
         {
           "word": "에너지",
@@ -2439,6 +2439,10 @@
           "count": 7
         },
         {
+          "word": "제품",
+          "count": 6
+        },
+        {
           "word": "만드는",
           "count": 6
         },
@@ -2447,15 +2451,7 @@
           "count": 6
         },
         {
-          "word": "없이",
-          "count": 5
-        },
-        {
           "word": "사업",
-          "count": 5
-        },
-        {
-          "word": "제품",
           "count": 5
         },
         {
@@ -2473,19 +2469,27 @@
         {
           "word": "특허",
           "count": 5
+        },
+        {
+          "word": "스마트",
+          "count": 5
         }
       ],
       "운영관리": [
+        {
+          "word": "솔루션",
+          "count": 9
+        },
         {
           "word": "관리",
           "count": 9
         },
         {
-          "word": "자동화",
+          "word": "운영",
           "count": 7
         },
         {
-          "word": "솔루션",
+          "word": "자동화",
           "count": 7
         },
         {
@@ -2493,12 +2497,16 @@
           "count": 6
         },
         {
-          "word": "운영",
+          "word": "창업",
           "count": 6
         },
         {
-          "word": "창업",
-          "count": 6
+          "word": "소상공인",
+          "count": 5
+        },
+        {
+          "word": "통합",
+          "count": 5
         },
         {
           "word": "데이터",
@@ -2509,31 +2517,23 @@
           "count": 5
         },
         {
+          "word": "매장",
+          "count": 4
+        },
+        {
+          "word": "비서",
+          "count": 4
+        },
+        {
+          "word": "안전",
+          "count": 4
+        },
+        {
+          "word": "브랜드",
+          "count": 4
+        },
+        {
           "word": "나만의",
-          "count": 4
-        },
-        {
-          "word": "통합",
-          "count": 4
-        },
-        {
-          "word": "설비",
-          "count": 4
-        },
-        {
-          "word": "사업",
-          "count": 4
-        },
-        {
-          "word": "시간",
-          "count": 4
-        },
-        {
-          "word": "실시간",
-          "count": 4
-        },
-        {
-          "word": "기반으로",
           "count": 4
         }
       ],
@@ -2857,6 +2857,10 @@
           "count": 6
         },
         {
+          "word": "드론",
+          "count": 5
+        },
+        {
           "word": "로봇",
           "count": 5
         },
@@ -2869,16 +2873,20 @@
           "count": 4
         },
         {
-          "word": "드론",
-          "count": 4
-        },
-        {
           "word": "차세대",
           "count": 4
         },
         {
           "word": "반도체",
           "count": 4
+        },
+        {
+          "word": "디스플레이",
+          "count": 3
+        },
+        {
+          "word": "모듈",
+          "count": 3
         },
         {
           "word": "디바이스",
@@ -2899,46 +2907,38 @@
         {
           "word": "보호하는",
           "count": 3
-        },
-        {
-          "word": "안전",
-          "count": 3
-        },
-        {
-          "word": "정밀",
-          "count": 3
         }
       ]
     },
     "avg_summary_length_by_subcategory": {
-      "F&B": 38.43,
-      "IT": 46.11,
-      "교육": 39.16,
-      "금융": 41.32,
-      "기타": 36.52,
+      "F&B": 38.11,
+      "IT": 46.2,
+      "교육": 39.08,
+      "금융": 40.59,
+      "기타": 36.39,
       "네트워킹": 36.93,
-      "농축·수산업": 35.72,
+      "농축·수산업": 36.12,
       "라이프스타일": 37.93,
-      "마케팅/PR": 43.92,
-      "모빌리티": 42.51,
-      "미디어/엔터테인먼트": 41.5,
-      "바이오/의료": 37.98,
-      "뷰티": 41.65,
-      "생활": 40.65,
-      "에너지/자원": 43.24,
-      "운영관리": 38.67,
-      "유통/물류": 37.79,
-      "임팩트": 45.96,
+      "마케팅/PR": 43.88,
+      "모빌리티": 41.88,
+      "미디어/엔터테인먼트": 41.61,
+      "바이오/의료": 38.34,
+      "뷰티": 42.27,
+      "생활": 40.6,
+      "에너지/자원": 43.38,
+      "운영관리": 38.41,
+      "유통/물류": 37.67,
+      "임팩트": 44.72,
       "재무": 33.25,
       "패션": 43.2,
-      "프롭테크": 43.23,
-      "하드웨어": 37.75
+      "프롭테크": 43.27,
+      "하드웨어": 37.47
     },
     "summary_length_distribution": {
-      "20~50자": 2366,
-      "~20자": 986,
-      "50~100자": 1465,
-      "100~200자": 57
+      "50~100자": 1497,
+      "~20자": 1012,
+      "20~50자": 2413,
+      "100~200자": 62
     }
   }
 }

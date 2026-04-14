@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터 수집 및 분석 방법 — 모두의 창업 아이디어</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/analytics.css">
+</head>
+<body>
+  <header>
+    <h1>데이터 수집 및 분석 방법</h1>
+    <p class="methodology-lead">본 사이트는 <a href="https://www.modoo.or.kr/idea/list" rel="noopener noreferrer">모두의 창업</a> 공개 아이디어를 기반으로 하며, 수집·집계 절차는 저장소의 Python 모듈(<code>modoo_fetch.py</code>, <code>modoo_analytics.py</code>, <code>modoo_insight.py</code>)에 구현되어 있습니다.</p>
+    <nav class="main-nav">
+      <a href="/methodology" class="nav-tab active">데이터 수집 및 분석 방법</a>
+      <a href="/" class="nav-tab">아이디어 목록</a>
+      <a href="/analytics" class="nav-tab">Raw data 분석</a>
+      <a href="/insight" class="nav-tab">Insight</a>
+      <a href="/idea10" class="nav-tab">idea 10</a>
+    </nav>
+  </header>
+
+  <main class="report-container methodology-page">
+    <section class="report-section" id="sec-source">
+      <h2 class="section-title">1. 데이터 수집 기간·출처</h2>
+      <ul class="methodology-list">
+        <li><strong>수집 시점(스냅샷)</strong>: &quot;최신 데이터 수집&quot;을 실행할 때마다 그 시각이 <code>crawled_at</code>(ISO 날짜시간)으로 기록됩니다. 특정 역사 구간을 고정해 두지 않고, <strong>실행 시점의 공개 목록 전체</strong>를 한 번에 가져옵니다.</li>
+        <li><strong>출처(원천 서비스)</strong>: 웹 목록 페이지 <a href="https://www.modoo.or.kr/idea/list" rel="noopener noreferrer">https://www.modoo.or.kr/idea/list</a>와 동일한 데이터를, 서버가 노출하는 JSON API(<code>https://hera-prod.modoo.or.kr/api/v1/startup-idea</code>)를 통해 수집합니다.</li>
+        <li><strong>로컬 보관 파일</strong>: 수집 결과는 프로젝트 루트의 <code>modoo_all_ideas.json</code>에 저장되고, 연구용 정적보내기 시 <code>research/data/ideas.json</code>에도 복제됩니다.</li>
+        <li><strong>인사이트 재현용 메타</strong>: Insight 화면과 함께 <code>research/data/insight_data_source.json</code>이 생성되며, 전수 행 수·수집 시각·API 엔드포인트 등 재현에 필요한 출처 정보를 담습니다.</li>
+      </ul>
+    </section>
+
+    <section class="report-section" id="sec-crawl">
+      <h2 class="section-title">2. 데이터 크롤링(수집) 방법</h2>
+      <ul class="methodology-list">
+        <li><strong>엔드포인트·요청</strong>: <code>modoo_fetch.fetch_page</code>가 페이지 번호·페이지 크기(기본 12건)·정렬(<code>createdAt,desc</code>)과 선택적 세부분야 태그(<code>tag</code>)를 쿼리로 붙여 GET 요청합니다. 브라우저와 유사한 <code>User-Agent</code>, <code>Referer</code>(<code>www.modoo.or.kr</code>), <code>Origin</code> 헤더를 사용합니다.</li>
+        <li><strong>응답 복호화</strong>: API는 Base64로 감싼 AES-CBC 암호문과 타임스탬프를 돌려줍니다. 타임스탬프 문자열(왼쪽부터 16자)을 키로 삼아 복호화한 뒤 JSON 배열로 파싱합니다.</li>
+        <li><strong>전수 수집 전략</strong>: <code>modoo_fetch.collect_all_ideas</code>는 사전에 정의한 <strong>세부분야(22개)</strong> 각각에 대해 첫 응답의 <code>totalPage</code>만큼 페이지를 순회합니다. 페이지 간 짧은 지연(<code>delay</code>, 기본 0.25초)으로 호출 부하를 줄입니다.</li>
+        <li><strong>중복 제거·정규화</strong>: 동일 <code>id</code>는 전역에서 한 번만 유지합니다. 원시 항목은 <code>parse_item</code>으로 요약·대분야 코드 매핑·세부분야·닉네임·좋아요·태그·등록일 등으로 정규화한 뒤, 등록일 기준 내림차순으로 다시 번호(<code>index</code>)를 매깁니다.</li>
+        <li><strong>실패 처리</strong>: 네트워크 오류 시 지수 백오프로 최대 3회 재시도합니다. 치명적 오류는 <code>CrawlError</code>로 상위(FastAPI <code>/api/crawl</code>)에 전달됩니다.</li>
+      </ul>
+    </section>
+
+    <section class="report-section" id="sec-raw">
+      <h2 class="section-title">3. Raw data 분석 방법</h2>
+      <ul class="methodology-list">
+        <li><strong>입력</strong>: 정규화된 <code>ideas</code> 배열과 선택적 <code>crawled_at</code>을 받습니다. 구현은 <code>modoo_analytics.compute_analytics</code>입니다.</li>
+        <li><strong>집계 축</strong>: 대분야·세부분야·도전자(닉네임)·좋아요·등록일 등 필드 기반으로 건수·비율·분포(히스토그램)·참여자 수·시계열 등을 계산합니다.</li>
+        <li><strong>텍스트(요약) 처리</strong>: 한글 연속 글자(<code>가-힣</code>, 2글자 이상)를 토큰으로 잡고, 사전 정의된 <strong>불용어 집합</strong>을 제외한 뒤 빈도 상위 키워드를 산출합니다.</li>
+        <li><strong>프런트 표시</strong>: <code>/analytics</code>는 <code>/api/analytics</code> 또는 배포 시 <code>/data/analytics.json</code>의 결과를 Chart.js 등으로 시각화합니다. 수집 직후 <code>export_for_research</code> 경로에서는 동일 로직으로 <code>research/data/analytics.json</code>이 갱신됩니다.</li>
+      </ul>
+    </section>
+
+    <section class="report-section" id="sec-insight">
+      <h2 class="section-title">4. 인사이트(Insight) 분석 방법</h2>
+      <ul class="methodology-list">
+        <li><strong>입력·역할</strong>: 동일한 <code>ideas</code> 전수에 대해 <code>modoo_insight.compute_insight</code>가 정량·정성·전략 블록을 한 번에 계산합니다. 외부 LLM을 호출하지 않고, <strong>규칙·키워드·휴리스틱</strong> 기반입니다.</li>
+        <li><strong>정량</strong>: 분야별 건수, 문제·가치 유형(키워드 규칙 목록과 요약 텍스트 매칭), 고객군·B2B/B2C/B2G 추정, AI 관련 언급 비율, 요약 토큰 유사도로 만든 그래프의 <strong>연결 요소(클러스터)</strong> 등을 집계합니다.</li>
+        <li><strong>정성</strong>: 창업 동기 유형, &quot;과장형&quot; vs &quot;실현형&quot; 키워드, 사회·임팩트·로컬 상위 키워드, 기술 언급은 많으나 시장·고객 언급이 적은 사례 표 등을 텍스트 패턴으로 뽑습니다.</li>
+        <li><strong>전략 문장</strong>: 위 지표를 조합해 짧은 해석 문장(카피)을 생성하는 레이어로, 보고서형 UI(<code>/insight</code>)에 바인딩됩니다.</li>
+        <li><strong>데이터보내기</strong>: 수집 완료 시 <code>research/data/insight.json</code>과 출처 메타 <code>insight_data_source.json</code>이 함께 기록되어, 화면과 파일이 동일 전수를 가리키는지 검증할 수 있습니다.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,5 +1,16 @@
 /* Insight 보고서 — analytics.css 보완 */
 
+/* 로딩 오버레이(z-index 500)보다 위에 두어 항상 클릭·표시 가능 */
+.insight-actions {
+  position: relative;
+  z-index: 600;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
 .insight-page .section-lead {
   font-size: 0.9rem;
   color: var(--muted);

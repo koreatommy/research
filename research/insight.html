@@ -14,13 +14,18 @@
     <h1>Insight 보고서</h1>
     <p id="meta">데이터 로딩 중...</p>
     <nav class="main-nav">
+      <a href="/methodology" class="nav-tab">데이터 수집 및 분석 방법</a>
       <a href="/" class="nav-tab">아이디어 목록</a>
       <a href="/analytics" class="nav-tab">Raw data 분석</a>
       <a href="/insight" class="nav-tab active">Insight</a>
+      <a href="/idea10" class="nav-tab">idea 10</a>
     </nav>
   </header>
 
   <main class="report-container insight-page">
+    <div class="insight-actions" aria-label="Insight 데이터보내기">
+      <a href="/data/insight_data_source.json" class="btn btn-secondary" download="insight_data_source.json">데이터 출처 JSON 다운로드</a>
+    </div>
     <div id="loadingOverlay" class="loading-overlay">
       <div class="spinner"></div>
       <p>인사이트를 생성하는 중입니다...</p>
@@ -103,7 +108,8 @@
   </main>
 
   <footer>
-    <p>데이터 출처: <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a></p>
+    <p>데이터 출처: <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a>
+      · <a href="/data/insight_data_source.json" download="insight_data_source.json">insight_data_source.json</a></p>
   </footer>
 
   <script src="/static/insight.js"></script>

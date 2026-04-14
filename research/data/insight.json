@@ -1,103 +1,103 @@
 {
   "meta": {
-    "total": 4874,
-    "crawled_at": "2026-04-13T18:21:36.607995"
+    "total": 4984,
+    "crawled_at": "2026-04-14T07:39:50.881161"
   },
   "quantitative": {
     "by_division": {
-      "일반/기술": 4020,
-      "로컬": 854
+      "일반/기술": 4107,
+      "로컬": 877
     },
     "by_subcategory": {
-      "라이프스타일": 812,
-      "F&B": 238,
-      "금융": 74,
-      "운영관리": 131,
-      "생활": 541,
-      "교육": 283,
-      "하드웨어": 104,
-      "농축·수산업": 123,
-      "IT": 1171,
-      "모빌리티": 87,
-      "기타": 378,
-      "뷰티": 40,
-      "유통/물류": 94,
-      "바이오/의료": 247,
-      "프롭테크": 40,
-      "에너지/자원": 150,
-      "미디어/엔터테인먼트": 127,
+      "에너지/자원": 151,
+      "IT": 1204,
+      "운영관리": 137,
+      "생활": 558,
+      "하드웨어": 107,
+      "라이프스타일": 827,
+      "F&B": 243,
+      "뷰티": 41,
+      "마케팅/PR": 52,
+      "기타": 387,
+      "농축·수산업": 127,
+      "바이오/의료": 250,
+      "모빌리티": 89,
+      "임팩트": 29,
+      "유통/물류": 95,
+      "미디어/엔터테인먼트": 129,
+      "프롭테크": 41,
+      "교육": 284,
+      "금융": 76,
       "네트워킹": 118,
       "패션": 35,
-      "마케팅/PR": 50,
-      "임팩트": 27,
       "재무": 4
     },
     "problem_type": {
-      "사회·공공·임팩트": 274,
-      "지역·로컬·관광": 266,
-      "기술·데이터·자동화": 966,
-      "기타·복합": 2007,
-      "건강·의료·케어": 503,
-      "교육·학습": 253,
-      "생활·편의·취미": 264,
-      "금융·재테크": 45,
-      "유통·커머스·예약": 296
+      "기타·복합": 2053,
+      "지역·로컬·관광": 272,
+      "기술·데이터·자동화": 987,
+      "사회·공공·임팩트": 281,
+      "유통·커머스·예약": 309,
+      "생활·편의·취미": 270,
+      "건강·의료·케어": 511,
+      "교육·학습": 255,
+      "금융·재테크": 46
     },
     "customer_segment": {
-      "전체·미특정": 4181,
-      "농어업·생산자": 44,
-      "기업·B2B고객": 109,
-      "주부·가정": 92,
-      "소상공인·자영업": 131,
-      "학생·청년": 150,
-      "시니어": 130,
+      "전체·미특정": 4276,
+      "소상공인·자영업": 135,
+      "학생·청년": 151,
+      "시니어": 134,
+      "기업·B2B고객": 113,
+      "농어업·생산자": 45,
+      "주부·가정": 93,
       "직장인": 37
     },
     "ai_usage": {
-      "yes": 1164,
-      "no": 3710
+      "yes": 1190,
+      "no": 3794
     },
     "b2x": {
-      "B2C": 3975,
-      "B2B": 801,
-      "B2G": 98
+      "B2B": 822,
+      "B2C": 4063,
+      "B2G": 99
     },
     "top_keywords": [
       {
         "word": "맞춤형",
-        "count": 206
+        "count": 209
       },
       {
         "word": "스마트",
-        "count": 205
+        "count": 209
       },
       {
         "word": "솔루션",
-        "count": 202
+        "count": 207
       },
       {
         "word": "활용한",
-        "count": 141
+        "count": 142
       },
       {
         "word": "지역",
-        "count": 135
+        "count": 139
       },
       {
         "word": "나만의",
-        "count": 130
+        "count": 132
       },
       {
         "word": "통합",
-        "count": 130
+        "count": 132
       },
       {
         "word": "개발",
-        "count": 125
+        "count": 128
       },
       {
         "word": "데이터",
-        "count": 124
+        "count": 125
       },
       {
         "word": "관리",
@@ -105,46 +105,50 @@
       },
       {
         "word": "실시간",
-        "count": 116
+        "count": 117
       },
       {
         "word": "로컬",
-        "count": 115
+        "count": 117
       },
       {
         "word": "만드는",
-        "count": 108
+        "count": 113
       },
       {
         "word": "자동",
-        "count": 104
+        "count": 107
       },
       {
         "word": "디지털",
-        "count": 103
-      },
-      {
-        "word": "브랜드",
-        "count": 97
+        "count": 105
       },
       {
         "word": "매칭",
-        "count": 95
+        "count": 98
       },
       {
         "word": "글로벌",
-        "count": 93
+        "count": 98
+      },
+      {
+        "word": "브랜드",
+        "count": 98
       },
       {
         "word": "제공하는",
-        "count": 90
+        "count": 92
       },
       {
         "word": "사업",
-        "count": 87
+        "count": 92
       },
       {
         "word": "도전",
+        "count": 88
+      },
+      {
+        "word": "연결하는",
         "count": 86
       },
       {
@@ -152,31 +156,31 @@
         "count": 86
       },
       {
-        "word": "연결하는",
-        "count": 83
+        "word": "자동화",
+        "count": 81
+      },
+      {
+        "word": "개인",
+        "count": 80
       },
       {
         "word": "제작",
         "count": 80
       },
       {
-        "word": "자동화",
-        "count": 79
-      },
-      {
-        "word": "개인",
-        "count": 77
-      },
-      {
         "word": "콘텐츠",
         "count": 76
       },
       {
-        "word": "기반으로",
-        "count": 72
+        "word": "프리미엄",
+        "count": 73
       },
       {
         "word": "가능한",
+        "count": 73
+      },
+      {
+        "word": "기반으로",
         "count": 72
       },
       {
@@ -184,33 +188,29 @@
         "count": 70
       },
       {
-        "word": "프리미엄",
-        "count": 70
-      },
-      {
         "word": "분석",
-        "count": 67
+        "count": 68
       },
       {
         "word": "이용한",
-        "count": 64
+        "count": 66
       },
       {
         "word": "결합한",
-        "count": 63
+        "count": 65
       },
       {
-        "word": "없이",
+        "word": "데이터를",
         "count": 63
       }
     ],
     "clusters": {
-      "cluster_count": 147,
+      "cluster_count": 151,
       "multi_idea_clusters": 3,
-      "largest_cluster_size": 4726,
+      "largest_cluster_size": 4832,
       "sample_clusters": [
         {
-          "size": 4726,
+          "size": 4832,
           "top_keywords": [
             "맞춤형",
             "스마트",
@@ -221,8 +221,8 @@
           "size": 2,
           "top_keywords": [
             "찾아라",
-            "창고의",
-            "보물을"
+            "보물을",
+            "창고의"
           ]
         },
         {
@@ -238,31 +238,31 @@
   },
   "qualitative": {
     "motivation": {
-      "사회문제·공익": 235,
-      "수익·사업기회": 215,
-      "기술혁신·효율": 1247,
-      "기타": 2953,
-      "자기실현·취미": 98,
-      "생활불편·Pain": 126
+      "생활불편·Pain": 130,
+      "기타": 3016,
+      "기술혁신·효율": 1272,
+      "사회문제·공익": 243,
+      "수익·사업기회": 222,
+      "자기실현·취미": 101
     },
     "hype_vs_execution": {
       "hype_only": 41,
-      "execution_only": 76,
+      "execution_only": 79,
       "both": 0,
-      "neither": 4757
+      "neither": 4864
     },
     "social_impact_keywords": [
       {
         "word": "지역",
-        "count": 135
+        "count": 139
       },
       {
         "word": "친환경",
-        "count": 49
+        "count": 52
       },
       {
         "word": "맞춤형",
-        "count": 46
+        "count": 47
       },
       {
         "word": "재활",
@@ -293,6 +293,10 @@
         "count": 27
       },
       {
+        "word": "개발",
+        "count": 21
+      },
+      {
         "word": "환경",
         "count": 21
       },
@@ -305,16 +309,12 @@
         "count": 20
       },
       {
-        "word": "개발",
-        "count": 20
+        "word": "만드는",
+        "count": 19
       },
       {
         "word": "데이터",
         "count": 19
-      },
-      {
-        "word": "만드는",
-        "count": 18
       },
       {
         "word": "관리",
@@ -329,89 +329,89 @@
         "count": 17
       },
       {
-        "word": "디지털",
+        "word": "사업",
         "count": 16
       }
     ],
-    "social_idea_count": 578,
+    "social_idea_count": 593,
     "tech_weak_samples": [
       {
-        "summary": "개인 투자자에게 적합한 자산 운용 전략을 AI로 분석·추천하는 디지털 금융 플랫폼",
-        "subcategory": "금융",
-        "likes": 0
-      },
-      {
-        "summary": "내가 무엇을 모르는지조차 모르는 학습자를 위한 AI 학습 길잡이",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "국민이 정책을 제안하고 AI가 정책 , 지역 별, 중요도 순으로 정리, 정치인이 채택·실행하고, 국민은 블라인드로 평가해 당 갈등 없이 성과로 성장하는 초격차 대한민국 정치 플랫폼",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "가정 내 보이지 않던 돌봄 노동과 일정 충돌을 데이터로 드러내고, 싸우기 전에 조정하게 만드는 운영 조정 시스템",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "지역 축·수산물을 OEM·브랜드화해 TV홈쇼핑과 라이브커머스로 판매하는 데이터 기반 식품 커머스 사업",
-        "subcategory": "농축·수산업",
-        "likes": 0
-      },
-      {
-        "summary": "내사업은 기존에 설치된 키오스크를 교체하지 않고, 하드웨어의 연장 활용과 소프트웨어 전환을 통해 접근성과 이용 편의성을 개선하는 범용 키오스크 솔루션입니다.",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "AI가 유튜브 영상을 자동으로 숏츠 스크립트와  PDF 요약본으로 변환해주는 콘텐츠 자동화 SaaS",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "\"전통 명리학과 AI 알고리즘을 결합하여 개인의 운명을 정밀 진단하고, 명상과 게임화(Gamification) 요소를 통해 삶을 주도적으로 디자인하는 차세대 멘탈 웰니스 플랫폼, ",
-        "subcategory": "IT",
-        "likes": 0
-      },
-      {
-        "summary": "혼밥이 싫은 대학생을 위한 실시간 식사 매칭 앱 . 위치와 메뉴만 입력하면 같은 학교 학생과 매칭해주는 서비스",
+        "summary": "AI 상태 매칭 엔진과 케미 분석 기술을 활용하여 게이머의 정서적 스트레스를 해소하고 최적화된 디지털 동행 경험을 제공하는 프리미엄 서비스",
         "subcategory": "IT",
         "likes": 1
       },
       {
-        "summary": "도전! AI 를 활용한 1인 게임/웹 개발 스튜디오 - OZS",
+        "summary": "도전! 대한민국 모든 인재의 손길로 완성되는 단, 하나의 AI 드론!",
+        "subcategory": "하드웨어",
+        "likes": 8
+      },
+      {
+        "summary": "소상공인 전용 AI 매장 운영 비서+ERP 시스템",
+        "subcategory": "운영관리",
+        "likes": 0
+      },
+      {
+        "summary": "심리 진단 데이터를 날씨 리포트로 변환하여 콘텐츠와 굿즈로 처방하는 100% 자동화 멘탈 솔루션 파이프라인",
         "subcategory": "IT",
         "likes": 0
       },
       {
-        "summary": "타이머를 완료하면 펫을 선물받는 앱 INTHEEGG — 스마트폰 의존 대신 집중력과 학습 습관을 키우는 종합 교육 게이미피케이션 플랫폼 (앱스토어 등록 진행 중)",
-        "subcategory": "교육",
+        "summary": "장시간 장갑 착용 환경에 대응한 직업군 특화 핸드 케어 제품 개발",
+        "subcategory": "라이프스타일",
         "likes": 0
       },
       {
-        "summary": "TikTok LIVE 크리에이터 에이전시 전용 AI 운영관리 SaaS 플랫폼",
+        "summary": "소중한 사람의 곁을  24시간 지키며, 보이지  않는  위험을 미리 듣고  알려주는 'AI 수호천사  Halo'",
+        "subcategory": "라이프스타일",
+        "likes": 3
+      },
+      {
+        "summary": "치과 치료의 설명을 시각화로 바꿔 전 연령 환자의 이해와 치료 결정을 높이는 치과용 AI 플랫폼",
+        "subcategory": "바이오/의료",
+        "likes": 1
+      },
+      {
+        "summary": "사용자 성향에 맞춰 말투와 반응을 바꾸는 개인 맞춤형 AI 대화 서비스",
+        "subcategory": "IT",
+        "likes": 1
+      },
+      {
+        "summary": "요양기관 기록을 자동으로 작성하고 사고 위험을 미리 알려주는 AI 서비스",
+        "subcategory": "IT",
+        "likes": 0
+      },
+      {
+        "summary": "언어 장벽을 허물어 외국인 근로자의 중대재해를 예방하는 다국어 AI 안전 솔루션, '가디(Guardi)'입니다",
         "subcategory": "운영관리",
+        "likes": 1
+      },
+      {
+        "summary": " 구인 공고를 올리면 AI가 외국인 근로자나 단기 구직자의 위치·숙련도를 분석해 실시간 배차까지 돕는 '농촌 인력 퀵매칭 서비스'",
+        "subcategory": "IT",
+        "likes": 1
+      },
+      {
+        "summary": "AI가 교재·필기·강의자료를 촬영만으로 구조화된 학습 문서로 정리해주는 스마트 학습 문서 플랫폼입니다.",
+        "subcategory": "IT",
         "likes": 0
       }
     ],
     "local_top_keywords": [
       {
         "word": "로컬",
-        "count": 91
+        "count": 93
       },
       {
         "word": "지역",
-        "count": 83
+        "count": 85
       },
       {
         "word": "활용한",
-        "count": 41
+        "count": 42
       },
       {
         "word": "맞춤형",
-        "count": 37
+        "count": 38
       },
       {
         "word": "브랜드",
@@ -419,78 +419,78 @@
       },
       {
         "word": "나만의",
-        "count": 30
+        "count": 31
       },
       {
         "word": "프리미엄",
-        "count": 29
+        "count": 30
+      },
+      {
+        "word": "만드는",
+        "count": 26
+      },
+      {
+        "word": "카페",
+        "count": 26
       },
       {
         "word": "개발",
         "count": 26
       },
       {
-        "word": "카페",
+        "word": "디저트",
         "count": 25
       },
       {
         "word": "공간",
-        "count": 24
-      },
-      {
-        "word": "만드는",
-        "count": 23
-      },
-      {
-        "word": "디저트",
-        "count": 23
+        "count": 25
       },
       {
         "word": "사업",
-        "count": 21
+        "count": 22
       },
       {
         "word": "결합한",
-        "count": 21
+        "count": 22
       },
       {
-        "word": "제주",
+        "word": "연결하는",
         "count": 21
       }
     ],
-    "local_idea_count": 854
+    "local_idea_count": 877
   },
   "strategic": {
     "crowded_subcategories": [
       {
         "subcategory": "IT",
-        "count": 1171,
-        "avg_likes": 2.231,
-        "total_likes": 2612
+        "count": 1204,
+        "avg_likes": 2.287,
+        "total_likes": 2754
       },
       {
         "subcategory": "라이프스타일",
-        "count": 812,
-        "avg_likes": 2.007,
-        "total_likes": 1630
+        "count": 827,
+        "avg_likes": 1.988,
+        "total_likes": 1644
       },
       {
         "subcategory": "생활",
-        "count": 541,
-        "avg_likes": 2.059,
-        "total_likes": 1114
+        "count": 558,
+        "avg_likes": 2.007,
+        "total_likes": 1120
       },
       {
         "subcategory": "기타",
-        "count": 378,
-        "avg_likes": 1.831,
-        "total_likes": 692
+        "count": 387,
+        "avg_likes": 1.806,
+        "total_likes": 699
       },
       {
         "subcategory": "교육",
-        "count": 283,
-        "avg_likes": 1.859,
-        "total_likes": 526
+        "count": 284,
+        "avg_likes": 1.866,
+        "total_likes": 530
       }
     ],
     "sparse_subcategories": [
@@ -502,9 +502,9 @@
       },
       {
         "subcategory": "임팩트",
-        "count": 27,
-        "avg_likes": 2.815,
-        "total_likes": 76
+        "count": 29,
+        "avg_likes": 2.655,
+        "total_likes": 77
       },
       {
         "subcategory": "패션",
@@ -514,42 +514,42 @@
       },
       {
         "subcategory": "뷰티",
-        "count": 40,
-        "avg_likes": 1.975,
+        "count": 41,
+        "avg_likes": 1.927,
         "total_likes": 79
       },
       {
         "subcategory": "프롭테크",
-        "count": 40,
-        "avg_likes": 2.85,
+        "count": 41,
+        "avg_likes": 2.78,
         "total_likes": 114
       }
     ],
     "support_needed": [],
     "avg_commercialization_by_division": {
       "일반/기술": 0.94,
-      "로컬": 0.84
+      "로컬": 0.83
     },
     "top_subcategories_by_commercialization_score": [
       {
-        "subcategory": "임팩트",
-        "avg_score": 1.34,
-        "n": 27
-      },
-      {
         "subcategory": "프롭테크",
-        "avg_score": 1.33,
-        "n": 40
+        "avg_score": 1.32,
+        "n": 41
       },
       {
         "subcategory": "마케팅/PR",
         "avg_score": 1.29,
-        "n": 50
+        "n": 52
+      },
+      {
+        "subcategory": "임팩트",
+        "avg_score": 1.29,
+        "n": 29
       },
       {
         "subcategory": "IT",
-        "avg_score": 1.22,
-        "n": 1171
+        "avg_score": 1.23,
+        "n": 1204
       },
       {
         "subcategory": "패션",
@@ -558,107 +558,107 @@
       },
       {
         "subcategory": "금융",
-        "avg_score": 1.15,
-        "n": 74
+        "avg_score": 1.13,
+        "n": 76
       },
       {
         "subcategory": "미디어/엔터테인먼트",
-        "avg_score": 1.1,
-        "n": 127
+        "avg_score": 1.09,
+        "n": 129
       },
       {
         "subcategory": "운영관리",
-        "avg_score": 0.96,
-        "n": 131
+        "avg_score": 0.94,
+        "n": 137
       },
       {
         "subcategory": "유통/물류",
-        "avg_score": 0.93,
-        "n": 94
+        "avg_score": 0.92,
+        "n": 95
       },
       {
         "subcategory": "에너지/자원",
-        "avg_score": 0.92,
-        "n": 150
+        "avg_score": 0.91,
+        "n": 151
       }
     ]
   },
   "scores": {
     "per_idea_sample": [
       {
-        "index": 4819,
+        "index": 4929,
         "summary": "글로벌 진출에 필요한 핵심 분야 서비스(해외 홀세일·IP보호·MCN 마케팅 등)를 통합하여 검증된 파트너에게 연결하는 K-브랜드 글로벌 B2B ",
         "score": 6.65
       },
       {
-        "index": 1180,
+        "index": 1291,
         "summary": "개인화된 AI 서비스 시장에서 소규모 개발자 혹은 개인들의 고품질 일상, 공감 데이터 확보 문제를 3중 품질 검증 크라우드소싱으로 해결하는 AI",
         "score": 6.55
       },
       {
-        "index": 3095,
+        "index": 3206,
         "summary": "객관적인 측정 데이터와 검증된 전문가를 연결하여, 의료기기에서 가정용 헬스케어 시장까지 아우르는 O2O 플랫폼, 풋포스(FootForce)입니다",
         "score": 6.55
       },
       {
-        "index": 857,
+        "index": 968,
         "summary": "실시간 다중 드론 레이다 타겟 에뮬레이터로 실제 드론 없이도 실험실 내에서 다중 드론의 비행 시나리오 및 레이다  반사특성을 1/10 가격으로 ",
         "score": 6.05
       },
       {
-        "index": 4841,
+        "index": 13,
+        "summary": "영수증 한 장으로 식재료 원가·재고·수익 위험 지표를 자동 계산하는 외식업 AI 수익관리 플랫폼",
+        "score": 5.65
+      },
+      {
+        "index": 4951,
         "summary": "AI 기반 제약 CSO 마케팅비용 정산·검증 및 컴플라이언스 자동화 SaaS 플랫폼",
         "score": 5.65
       },
       {
-        "index": 1023,
+        "index": 1134,
         "summary": "광고비를 쓰기 전, 소비자의 실제 반응과 구매 의도를 행동 데이터로 검증하는 브랜드 마케팅 PoC 플랫폼",
         "score": 5.6
       },
       {
-        "index": 1389,
+        "index": 19,
+        "summary": "북미 파충류 시장 타겟 생태계 구축(Bio-Active) 솔루션 자동화 비즈니스",
+        "score": 5.55
+      },
+      {
+        "index": 1500,
         "summary": "방구석 mba - 사업자를 위한 방구석 에서도 5~10만원대로 검증된 AI·마케팅 실무 강의를 듣는 교육 플랫폼",
         "score": 5.55
       },
       {
-        "index": 3218,
+        "index": 3329,
         "summary": "극장 유휴시간을 활용해 AI 콘텐츠를 검증하고 유통하는 데이터 기반 플랫폼",
         "score": 5.55
       },
       {
-        "index": 2344,
+        "index": 87,
+        "summary": "AI가 검증된 부업만 찾아주고, AI 도구로 바로 수익화할 수 있게 돕는 글로벌 부업 플랫폼",
+        "score": 5.5
+      },
+      {
+        "index": 2455,
         "summary": "6시간의 여행 준비를 5분으로 단축하는 AI 여행 지능 엔진입니다 . 검증된 데이터로 최적 동선과 숙소를 추천하고, 온디바이스 AI로 안전을 보",
         "score": 5.2
       },
       {
-        "index": 1990,
+        "index": 2101,
         "summary": "게임제작 종합 ai툴. 그림체학습으로 원하는 일러스트 생성기능, 자연어프롬프트로 게임에셋 자동생성 및 MVP제작 가능, 게임관련 홍보영상 제작을",
         "score": 5.15
       },
       {
-        "index": 3066,
+        "index": 3177,
         "summary": "HBM 반도체 웨이퍼 휨(Warpage)을 Multi-zone 독립 진공 제어로 실시간 보정하는 모듈형 Aeromechanics Chuck",
         "score": 5.15
       },
       {
-        "index": 1339,
+        "index": 1450,
         "summary": "맛집·미용실부터 병원까지, 외국인 고객을 직접 불러오는 중국·일본·대만 타겟 해외마케팅 서비스",
         "score": 5.1
-      },
-      {
-        "index": 2309,
-        "summary": "부산 기장 미역에서 추출한 후코이단을 활용한 기능성·훈련용 펫간식을 개발하고, 매장 테스트를 통해 검증 후 수출까지 확장하는 부산 기반 펫푸드 ",
-        "score": 5.1
-      },
-      {
-        "index": 2989,
-        "summary": "내 아이디어, 제품, 서비스를 실제 유저에게 무료로 피드백을 받고, 유저는 체험하며 돈을 버는 시장검증 플랫폼",
-        "score": 5.1
-      },
-      {
-        "index": 963,
-        "summary": "빛(PBM 레이저)+소리(신경음향)=모바일 플랫폼으로 융합한 세포를 직접 충전하여  질병의 근원을 차단하는 웨어러블 웰니스 헬스케어",
-        "score": 5.05
       }
     ]
   }

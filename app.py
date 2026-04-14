@@ -14,7 +14,7 @@ from io import BytesIO
 from pathlib import Path
 from typing import Any, Optional
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
@@ -22,6 +22,7 @@ from modoo_fetch import CrawlError, collect_all_ideas
 from modoo_filters import TECH_SUBCATEGORIES, LOCAL_SUBCATEGORIES, filter_ideas
 from modoo_analytics import compute_analytics
 from modoo_insight import compute_insight
+from modoo_insight_provenance import write_insight_data_source
 
 ROOT = Path(__file__).resolve().parent
 JSON_PATH = ROOT / "modoo_all_ideas.json"
@@ -31,6 +32,15 @@ DATA_DIR = RESEARCH_DIR / "data"
 
 ideas_data: dict[str, Any] = {}
 crawl_lock = asyncio.Lock()
+
+# Cursor 등 IDE 내장 브라우저(Electron WebView)가 HTML/CSS를 오래 캐시하는 경우가 많아
+# 로컬 개발 시 정적 자산은 재검증·비저장으로 내려준다.
+_DEV_NO_CACHE_HEADERS = {"Cache-Control": "no-store, max-age=0", "Pragma": "no-cache"}
+
+
+def _html_file_response(path: Path) -> FileResponse:
+    return FileResponse(path, media_type="text/html", headers=dict(_DEV_NO_CACHE_HEADERS))
+
 
 # openpyxl이 거부하는 제어 문자(예: U+0000) 제거 — API 원문에 포함될 수 있음
 _ILLEGAL_XLSX_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
@@ -55,6 +65,17 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="모두의 창업 뷰어", lifespan=lifespan)
 
+
+@app.middleware("http")
+async def dev_disable_asset_cache(request: Request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    if path.startswith("/static/") or path.startswith("/data/"):
+        for k, v in _DEV_NO_CACHE_HEADERS.items():
+            response.headers.setdefault(k, v)
+    return response
+
+
 if STATIC_DIR.is_dir():
     app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 if DATA_DIR.is_dir():
@@ -65,7 +86,7 @@ if DATA_DIR.is_dir():
 async def index():
     html_path = RESEARCH_DIR / "index.html"
     if html_path.is_file():
-        return FileResponse(html_path, media_type="text/html")
+        return _html_file_response(html_path)
     return {"message": "research/index.html 파일이 없습니다."}
 
 
@@ -171,6 +192,8 @@ def _export_research_data(data: dict[str, Any]) -> None:
     with open(DATA_DIR / "insight.json", "w", encoding="utf-8") as f:
         json.dump(insight, f, ensure_ascii=False, indent=2)
 
+    write_insight_data_source(DATA_DIR / "insight_data_source.json", data)
+
 
 @app.post("/api/crawl")
 async def api_crawl():
@@ -197,11 +220,19 @@ async def api_crawl():
     }
 
 
+@app.get("/methodology")
+async def methodology_page():
+    html_path = RESEARCH_DIR / "methodology.html"
+    if html_path.is_file():
+        return _html_file_response(html_path)
+    return {"message": "research/methodology.html 파일이 없습니다."}
+
+
 @app.get("/analytics")
 async def analytics_page():
     html_path = RESEARCH_DIR / "analytics.html"
     if html_path.is_file():
-        return FileResponse(html_path, media_type="text/html")
+        return _html_file_response(html_path)
     return {"message": "research/analytics.html 파일이 없습니다."}
 
 
@@ -209,8 +240,16 @@ async def analytics_page():
 async def insight_page():
     html_path = RESEARCH_DIR / "insight.html"
     if html_path.is_file():
-        return FileResponse(html_path, media_type="text/html")
+        return _html_file_response(html_path)
     return {"message": "research/insight.html 파일이 없습니다."}
+
+
+@app.get("/idea10")
+async def idea10_report():
+    html_path = RESEARCH_DIR / "startup_ideas_report_v2.html"
+    if html_path.is_file():
+        return _html_file_response(html_path)
+    return {"message": "research/startup_ideas_report_v2.html 파일이 없습니다."}
 
 
 @app.get("/api/analytics")

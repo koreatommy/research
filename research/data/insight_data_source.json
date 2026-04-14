@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "document_type": "insight_data_source",
+  "generated_at": "2026-04-13T22:39:51.324294+00:00",
+  "purpose_ko": "인사이트 화면 및 insight.json의 근거가 된 전수(스냅샷) 데이터 출처·범위·재현에 필요한 메타데이터. 외부 도구로 전수 재분석 시 입력 파일·건수·수집 시각을 식별한다.",
+  "full_census": {
+    "definition_ko": "본 JSON에서 전수는 '수집 시점에 중복 제거된 ideas 배열의 모든 행'을 의미한다. 인사이트 집계(분야별 건수, AI 비율 등)는 이 배열 전체를 순회해 계산된다.",
+    "row_count": 4984,
+    "declared_total_field": 4984,
+    "distinct_idea_ids": 4984,
+    "idea_id_sorted_sha256": "44e24fa70a52159cc0f7d12f0529a333b010e91107de1d28481e819a64c7117d"
+  },
+  "primary_dataset": {
+    "role": "insight_and_analytics_source_of_truth",
+    "repository_relative_path": "modoo_all_ideas.json",
+    "mirror_after_export_relative_path": "research/data/ideas.json",
+    "crawled_at": "2026-04-14T07:39:50.881161",
+    "list_page_url": "https://www.modoo.or.kr/idea/list"
+  },
+  "collection": {
+    "method_ko": "세부분야(서브카테고리)별로 API totalPage만큼 페이지를 순회해 수집. 동일 id는 한 번만 유지(전역 중복 제거).",
+    "api_endpoint": "https://hera-prod.modoo.or.kr/api/v1/startup-idea",
+    "page_size": 12,
+    "total_pages_fetched": 425,
+    "subcategory_stats": {
+      "IT": 1204,
+      "교육": 284,
+      "금융": 76,
+      "운영관리": 137,
+      "네트워킹": 118,
+      "농축·수산업": 127,
+      "라이프스타일": 827,
+      "마케팅/PR": 52,
+      "모빌리티": 89,
+      "미디어/엔터테인먼트": 129,
+      "바이오/의료": 250,
+      "에너지/자원": 151,
+      "유통/물류": 95,
+      "임팩트": 29,
+      "재무": 4,
+      "프롭테크": 41,
+      "하드웨어": 107,
+      "기타": 387,
+      "패션": 35,
+      "F&B": 243,
+      "뷰티": 41,
+      "생활": 558
+    },
+    "subcategories_enumerated": [
+      "IT",
+      "교육",
+      "금융",
+      "운영관리",
+      "네트워킹",
+      "농축·수산업",
+      "라이프스타일",
+      "마케팅/PR",
+      "모빌리티",
+      "미디어/엔터테인먼트",
+      "바이오/의료",
+      "에너지/자원",
+      "유통/물류",
+      "임팩트",
+      "재무",
+      "프롭테크",
+      "하드웨어",
+      "기타",
+      "패션",
+      "F&B",
+      "뷰티",
+      "생활"
+    ],
+    "subcategory_count": 22
+  },
+  "derived_artifacts": {
+    "insight_json_relative": "research/data/insight.json",
+    "analytics_json_relative": "research/data/analytics.json",
+    "this_file_relative": "research/data/insight_data_source.json"
+  },
+  "insight_pipeline": {
+    "implementation": "modoo_insight.compute_insight",
+    "input_scope_ko": "ideas 리스트 전체(페이지 분할 없이 동일 배열을 그대로 전달)",
+    "runtime_api_path": "/api/insight",
+    "static_export_note_ko": "정적 호스팅 시 /data/insight.json 이 있으면 프론트가 우선 사용; 로컬 서버에서는 크롤 후 insight_data_source.json이 함께 갱신된다.",
+    "algorithmic_limits_ko": "클러스터링(유사 그룹 수): 매우 흔한 단어(문서 출현 수 > max_word_doc_freq=400)는 아이디어 간 연결에 사용하지 않음. 키워드 상위 N·샘플 목록 등은 표시용 truncation."
+  },
+  "consistency_checks": {
+    "ideas_len_equals_declared_total": true,
+    "ideas_len_equals_insight_meta_total": true
+  }
+}
