@@ -8,16 +8,23 @@
   <link rel="stylesheet" href="/static/analytics.css">
 </head>
 <body>
-  <header>
-    <h1>데이터 수집 및 분석 방법</h1>
-    <p class="methodology-lead">본 사이트는 <a href="https://www.modoo.or.kr/idea/list" rel="noopener noreferrer">모두의 창업</a> 공개 아이디어를 기반으로 하며, 수집·집계 절차는 저장소의 Python 모듈(<code>modoo_fetch.py</code>, <code>modoo_analytics.py</code>, <code>modoo_insight.py</code>)에 구현되어 있습니다.</p>
-    <nav class="main-nav">
+  <div class="site-header__nav">
+    <div class="site-header__nav-scroll">
+      <nav class="main-nav" aria-label="주요 메뉴">
       <a href="/methodology" class="nav-tab active">데이터 수집 및 분석 방법</a>
       <a href="/" class="nav-tab">아이디어 목록</a>
       <a href="/analytics" class="nav-tab">Raw data 분석</a>
       <a href="/insight" class="nav-tab">Insight</a>
       <a href="/idea10" class="nav-tab">idea 10</a>
     </nav>
+    </div>
+  </div>
+  <div class="site-header__nav-spacer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="site-header__intro">
+      <h1>데이터 수집 및 분석 방법</h1>
+      <p class="methodology-lead">본 사이트는 <a href="https://www.modoo.or.kr/idea/list" rel="noopener noreferrer">모두의 창업</a> 공개 아이디어를 기반으로 하며, 수집·집계 절차는 저장소의 Python 모듈(<code>modoo_fetch.py</code>, <code>modoo_analytics.py</code>, <code>modoo_insight.py</code>)에 구현되어 있습니다.</p>
+    </div>
   </header>
 
   <main class="report-container methodology-page">

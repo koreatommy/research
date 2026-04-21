@@ -8,37 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #e94560;
-            --accent-light: #ff6b6b;
-            --success: #0f3460;
-            --highlight: #00d9ff;
-            --bg-main: #f8f9fa;
-            --text-primary: #1a1a2e;
-            --text-secondary: #6c757d;
-            --card-bg: #ffffff;
-            --gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            --gradient-accent: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
-            --gradient-blue: linear-gradient(135deg, #00d9ff 0%, #0f3460 100%);
-            --shadow-sm: 0 2px 8px rgba(26,26,46,0.06);
-            --shadow-md: 0 8px 30px rgba(26,26,46,0.1);
-            --shadow-lg: 0 20px 60px rgba(26,26,46,0.15);
+        body.idea10-report {
+            --report-primary: #1a1a2e;
+            --report-secondary: #16213e;
+            --report-accent: #e94560;
+            --report-accent-light: #ff6b6b;
+            --report-success: #0f3460;
+            --report-highlight: #00d9ff;
+            --report-bg-main: #f8f9fa;
+            --report-text-primary: #1a1a2e;
+            --report-text-secondary: #6c757d;
+            --report-card-bg: #ffffff;
+            --report-gradient-hero: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --report-gradient-accent: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            --report-gradient-blue: linear-gradient(135deg, #00d9ff 0%, #0f3460 100%);
+            --report-shadow-sm: 0 2px 8px rgba(26,26,46,0.06);
+            --report-shadow-md: 0 8px 30px rgba(26,26,46,0.1);
+            --report-shadow-lg: 0 20px 60px rgba(26,26,46,0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
+        body.idea10-report {
             font-family: 'Noto Sans KR', sans-serif;
-            background: var(--bg-main);
-            color: var(--text-primary);
+            background: var(--report-bg-main);
+            color: var(--report-text-primary);
             line-height: 1.8;
         }
 
         /* Hero Section */
         .hero {
-            background: var(--gradient-hero);
+            background: var(--report-gradient-hero);
             padding: 80px 40px 100px;
             position: relative;
             overflow: hidden;
@@ -60,7 +60,7 @@
 
         .hero-badge {
             display: inline-block;
-            background: var(--gradient-accent);
+            background: var(--report-gradient-accent);
             color: #fff;
             padding: 8px 20px;
             border-radius: 50px;
@@ -81,7 +81,7 @@
         }
 
         .hero h1 span {
-            color: var(--highlight);
+            color: var(--report-highlight);
         }
 
         .hero-stats {
@@ -98,7 +98,7 @@
         .hero-stat-value {
             font-size: 2.5rem;
             font-weight: 900;
-            color: var(--highlight);
+            color: var(--report-highlight);
             line-height: 1;
         }
 
@@ -135,13 +135,13 @@
         .section-title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--report-primary);
             position: relative;
             z-index: 1;
         }
 
         .section-subtitle {
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
             font-size: 1rem;
             margin-top: 8px;
         }
@@ -155,21 +155,21 @@
         }
 
         .data-card {
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 16px;
             padding: 25px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
             border: 1px solid rgba(0,0,0,0.04);
             transition: all 0.3s ease;
         }
 
         .data-card:hover {
             transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--report-shadow-lg);
         }
 
         .data-card.accent {
-            background: var(--gradient-accent);
+            background: var(--report-gradient-accent);
             color: #fff;
         }
 
@@ -181,12 +181,12 @@
         .data-value {
             font-size: 2.2rem;
             font-weight: 900;
-            color: var(--primary);
+            color: var(--report-primary);
             line-height: 1.1;
         }
 
         .data-label {
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
             font-size: 0.85rem;
             margin-top: 8px;
         }
@@ -200,17 +200,17 @@
         }
 
         .chart-card {
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
         }
 
         .chart-title {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--report-primary);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -223,7 +223,7 @@
 
         /* Keyword Analysis */
         .keyword-section {
-            background: var(--secondary);
+            background: var(--report-secondary);
             color: #fff;
             padding: 60px 40px;
             margin: 40px -40px;
@@ -277,14 +277,14 @@
         .keyword-progress-fill {
             height: 100%;
             border-radius: 4px;
-            background: var(--gradient-accent);
+            background: var(--report-gradient-accent);
         }
 
         .keyword-count {
             flex: 0 0 60px;
             text-align: right;
             font-size: 0.85rem;
-            color: var(--highlight);
+            color: var(--report-highlight);
         }
 
         /* Gap Analysis */
@@ -296,18 +296,18 @@
         }
 
         .gap-card {
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
         }
 
         .gap-card.opportunity {
-            border-top: 4px solid var(--highlight);
+            border-top: 4px solid var(--report-highlight);
         }
 
         .gap-card.saturated {
-            border-top: 4px solid var(--accent);
+            border-top: 4px solid var(--report-accent);
         }
 
         .gap-header {
@@ -356,7 +356,7 @@
             font-size: 0.85rem;
             padding: 4px 12px;
             border-radius: 20px;
-            background: var(--bg-main);
+            background: var(--report-bg-main);
         }
 
         .gap-card.opportunity .gap-count {
@@ -366,7 +366,7 @@
 
         .gap-card.saturated .gap-count {
             background: rgba(233,69,96,0.1);
-            color: var(--accent);
+            color: var(--report-accent);
         }
 
         /* Fusion Gap Table */
@@ -374,10 +374,10 @@
             width: 100%;
             border-collapse: collapse;
             margin: 30px 0;
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
         }
 
         .fusion-table th, .fusion-table td {
@@ -386,7 +386,7 @@
         }
 
         .fusion-table th {
-            background: var(--primary);
+            background: var(--report-primary);
             color: #fff;
             font-weight: 600;
             font-size: 0.9rem;
@@ -410,7 +410,7 @@
 
         .fusion-badge.hot {
             background: rgba(233,69,96,0.1);
-            color: var(--accent);
+            color: var(--report-accent);
         }
 
         .fusion-badge.warm {
@@ -425,17 +425,17 @@
         }
 
         .idea-card {
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
             transition: all 0.4s ease;
             position: relative;
         }
 
         .idea-card:hover {
             transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--report-shadow-lg);
         }
 
         .idea-card::before {
@@ -445,7 +445,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--gradient-accent);
+            background: var(--report-gradient-accent);
         }
 
         .idea-header {
@@ -485,12 +485,12 @@
 
         .idea-tag.trend {
             background: rgba(233,69,96,0.1);
-            color: var(--accent);
+            color: var(--report-accent);
         }
 
         .idea-tag.tech {
             background: rgba(15,52,96,0.1);
-            color: var(--success);
+            color: var(--report-success);
         }
 
         .idea-tag.gap {
@@ -502,11 +502,11 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--primary);
+            color: var(--report-primary);
         }
 
         .idea-subtitle {
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
             font-size: 1rem;
         }
 
@@ -523,7 +523,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--accent);
+            color: var(--report-accent);
             margin-bottom: 10px;
         }
 
@@ -536,26 +536,26 @@
             border-radius: 12px;
             padding: 16px 20px;
             margin-top: 15px;
-            border-left: 3px solid var(--highlight);
+            border-left: 3px solid var(--report-highlight);
         }
 
         .idea-evidence-title {
             font-size: 0.75rem;
             font-weight: 700;
-            color: var(--success);
+            color: var(--report-success);
             margin-bottom: 6px;
         }
 
         .idea-evidence p {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
         }
 
         .idea-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-            background: var(--bg-main);
+            background: var(--report-bg-main);
             padding: 20px;
             border-radius: 16px;
             margin-top: 20px;
@@ -568,12 +568,12 @@
         .metric-value {
             font-size: 1.2rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--report-primary);
         }
 
         .metric-label {
             font-size: 0.75rem;
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
             margin-top: 4px;
         }
 
@@ -588,15 +588,15 @@
         .metric-bar-fill {
             height: 100%;
             border-radius: 2px;
-            background: var(--gradient-accent);
+            background: var(--report-gradient-accent);
         }
 
         /* Methodology */
         .methodology {
-            background: var(--card-bg);
+            background: var(--report-card-bg);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--report-shadow-md);
             margin-top: 50px;
         }
 
@@ -604,7 +604,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--primary);
+            color: var(--report-primary);
         }
 
         .methodology-grid {
@@ -615,26 +615,26 @@
 
         .methodology-item {
             padding: 20px;
-            background: var(--bg-main);
+            background: var(--report-bg-main);
             border-radius: 12px;
         }
 
         .methodology-item h4 {
             font-size: 0.9rem;
             font-weight: 700;
-            color: var(--accent);
+            color: var(--report-accent);
             margin-bottom: 10px;
         }
 
         .methodology-item p {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--report-text-secondary);
             line-height: 1.7;
         }
 
         /* Conclusion */
         .conclusion {
-            background: var(--gradient-hero);
+            background: var(--report-gradient-hero);
             border-radius: 24px;
             padding: 50px;
             color: #fff;
@@ -671,12 +671,12 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--highlight);
+            color: var(--report-highlight);
         }
 
         /* Footer */
         footer {
-            background: var(--primary);
+            background: var(--report-primary);
             color: rgba(255,255,255,0.6);
             padding: 40px;
             text-align: center;
@@ -684,7 +684,7 @@
         }
 
         footer a {
-            color: var(--highlight);
+            color: var(--report-highlight);
             text-decoration: none;
         }
 
@@ -698,17 +698,24 @@
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>창업 틈새 시장 전수 분석 및 혁신 아이디어 10선</h1>
-        <p>데이터 기반 10선 보고서</p>
-        <nav class="main-nav">
+<body class="idea10-report">
+    <div class="site-header__nav">
+        <div class="site-header__nav-scroll">
+            <nav class="main-nav" aria-label="주요 메뉴">
             <a href="/methodology" class="nav-tab">데이터 수집 및 분석 방법</a>
             <a href="/" class="nav-tab">아이디어 목록</a>
             <a href="/analytics" class="nav-tab">Raw data 분석</a>
             <a href="/insight" class="nav-tab">Insight</a>
             <a href="/idea10" class="nav-tab active">idea 10</a>
         </nav>
+        </div>
+    </div>
+  <div class="site-header__nav-spacer" aria-hidden="true"></div>
+    <header class="site-header">
+        <div class="site-header__intro">
+            <h1>창업 틈새 시장 전수 분석 및 혁신 아이디어 10선</h1>
+            <p>데이터 기반 10선 보고서</p>
+        </div>
     </header>
 
     <section class="hero">
@@ -1011,46 +1018,46 @@
 
             <!-- 선정 방법 요약 박스 -->
             <div style="background: linear-gradient(135deg, rgba(0,217,255,0.08) 0%, rgba(233,69,96,0.08) 100%); border-radius: 20px; padding: 30px 35px; margin-bottom: 40px; border: 1px solid rgba(0,217,255,0.2);">
-                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                    <span style="background: var(--gradient-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem;">✓</span>
+                <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--report-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span style="background: var(--report-gradient-accent); color: #fff; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem;">✓</span>
                     아이디어 선정 방법론
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
                     <div style="display: flex; gap: 12px; align-items: flex-start;">
-                        <span style="background: var(--highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">1</span>
+                        <span style="background: var(--report-highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">1</span>
                         <div>
-                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--primary);">틈새 분야 우선 공략</div>
-                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">재무(4건), 임팩트(27건) 등 저밀도 분야 타겟</div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--report-primary);">틈새 분야 우선 공략</div>
+                            <div style="font-size: 0.8rem; color: var(--report-text-secondary); margin-top: 4px;">재무(4건), 임팩트(27건) 등 저밀도 분야 타겟</div>
                         </div>
                     </div>
                     <div style="display: flex; gap: 12px; align-items: flex-start;">
-                        <span style="background: var(--highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</span>
+                        <span style="background: var(--report-highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</span>
                         <div>
-                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--primary);">키워드 조합 공백 발굴</div>
-                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">ESG+투자(1건), 시니어+금융(3건) 등 교차점 탐색</div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--report-primary);">키워드 조합 공백 발굴</div>
+                            <div style="font-size: 0.8rem; color: var(--report-text-secondary); margin-top: 4px;">ESG+투자(1건), 시니어+금융(3건) 등 교차점 탐색</div>
                         </div>
                     </div>
                     <div style="display: flex; gap: 12px; align-items: flex-start;">
-                        <span style="background: var(--highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">3</span>
+                        <span style="background: var(--report-highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">3</span>
                         <div>
-                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--primary);">전수 중복 검증</div>
-                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">4,874건 키워드 검색으로 유사 아이디어 확인</div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--report-primary);">전수 중복 검증</div>
+                            <div style="font-size: 0.8rem; color: var(--report-text-secondary); margin-top: 4px;">4,874건 키워드 검색으로 유사 아이디어 확인</div>
                         </div>
                     </div>
                     <div style="display: flex; gap: 12px; align-items: flex-start;">
-                        <span style="background: var(--highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">4</span>
+                        <span style="background: var(--report-highlight); color: #fff; min-width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">4</span>
                         <div>
-                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--primary);">메가트렌드 융합</div>
-                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">AI(23.6%), 시니어(4.7%), ESG(2.6%) 트렌드 결합</div>
+                            <div style="font-weight: 600; font-size: 0.9rem; color: var(--report-primary);">메가트렌드 융합</div>
+                            <div style="font-size: 0.8rem; color: var(--report-text-secondary); margin-top: 4px;">AI(23.6%), 시니어(4.7%), ESG(2.6%) 트렌드 결합</div>
                         </div>
                     </div>
                 </div>
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.08);">
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7;">
-                        <strong style="color: var(--primary);">선정 공식:</strong> 
-                        <span style="background: rgba(233,69,96,0.1); padding: 2px 8px; border-radius: 4px; color: var(--accent);">틈새 분야</span> × 
+                    <p style="font-size: 0.85rem; color: var(--report-text-secondary); line-height: 1.7;">
+                        <strong style="color: var(--report-primary);">선정 공식:</strong> 
+                        <span style="background: rgba(233,69,96,0.1); padding: 2px 8px; border-radius: 4px; color: var(--report-accent);">틈새 분야</span> × 
                         <span style="background: rgba(0,217,255,0.1); padding: 2px 8px; border-radius: 4px; color: #0f3460;">키워드 조합 공백</span> × 
-                        <span style="background: rgba(15,52,96,0.1); padding: 2px 8px; border-radius: 4px; color: var(--success);">메가트렌드</span> 
+                        <span style="background: rgba(15,52,96,0.1); padding: 2px 8px; border-radius: 4px; color: var(--report-success);">메가트렌드</span> 
                         → 중복 검증 통과 시 최종 선정
                     </p>
                 </div>

@@ -10,6 +10,14 @@
   --text: #212529;
   --muted: #868E96;
   --border: #DEE2E6;
+  /* Site chrome: header colors stay consistent if --primary is overridden (e.g. idea10 report body) */
+  --site-title-color: #364FC7;
+  --site-subtitle-color: #868E96;
+  --site-nav-bg: #ffffff;
+  --site-nav-border: #dee2e6;
+  --site-nav-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  --site-nav-tab-muted: #868e96;
+  --site-nav-tab-active: #3b5bdb;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,51 +30,102 @@ body {
   padding: 0 16px 40px;
 }
 
-header {
+.site-header {
   text-align: center;
-  padding: 32px 0 16px;
+  padding: 32px 0 0;
 }
 
-header h1 {
+.site-header__intro {
+  padding: 0 0 16px;
+}
+
+.site-header__intro h1 {
   font-size: 1.75rem;
-  color: var(--primary);
+  font-weight: 700;
+  color: var(--site-title-color);
+  letter-spacing: -0.02em;
 }
 
-header p {
+.site-header__intro p {
   margin-top: 8px;
-  color: var(--muted);
+  color: var(--site-subtitle-color);
 }
 
-.main-nav {
+/* position:fixed — sticky는 webview/iframe 스크롤 컨텍스트에서 깨지는 사례가 있어 fixed로 대체 */
+.site-header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 200;
+  background: var(--site-nav-bg);
+  border-bottom: 2px solid var(--site-nav-border);
+  box-shadow: var(--site-nav-shadow);
+}
+
+/* fixed nav 높이만큼 뒤따르는 콘텐츠를 밀어내는 스페이서 */
+.site-header__nav-spacer {
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.site-header__nav-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.site-header__nav-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.site-header__nav-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.site-header__nav .main-nav {
   display: flex;
   justify-content: center;
   gap: 4px;
-  margin-top: 16px;
-  border-bottom: 2px solid var(--border);
-  padding-bottom: 0;
+  margin-top: 0;
+  padding: 0 8px;
+  border-bottom: none;
+  overflow: visible;
+  flex-wrap: nowrap;
+}
+
+@media (max-width: 899px) {
+  .site-header__nav .main-nav {
+    justify-content: flex-start;
+  }
 }
 
 .nav-tab {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 24px;
+  padding: 10px 18px;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--site-nav-tab-muted);
   text-decoration: none;
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
+  flex-shrink: 0;
+  white-space: nowrap;
   transition: color 0.2s, border-color 0.2s;
 }
 
-.nav-tab:hover {
-  color: var(--primary);
+.site-header__nav .nav-tab:hover {
+  color: var(--site-nav-tab-active);
 }
 
-.nav-tab.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
+.site-header__nav .nav-tab.active {
+  color: var(--site-nav-tab-active);
+  border-bottom-color: var(--site-nav-tab-active);
 }
 
 main {
@@ -476,8 +535,13 @@ footer a {
     order: 2;
   }
 
-  header h1 {
+  .site-header__intro h1 {
     font-size: 1.4rem;
+  }
+
+  .nav-tab {
+    padding: 10px 14px;
+    font-size: 0.88rem;
   }
 
   .btn {
