@@ -4,6 +4,6 @@
   "description": "Vercel: copies research/ static site to out/ for deployment",
   "scripts": {
     "dev": "python3 -m uvicorn app:app --reload --host 127.0.0.1 --port 8000",
-    "build": "rm -rf out && mkdir -p out && cp research/index.html research/analytics.html research/insight.html research/methodology.html research/startup_ideas_report_v2.html out/ && cp research/vercel.json out/ && cp -R research/static out/static && cp -R research/data out/data"
+    "build": "rm -rf out && mkdir -p out && cp research/index.html research/analytics.html research/insight.html research/methodology.html research/startup_ideas_report_v2.html research/youth_ideas.html out/ && cp research/vercel.json out/ && cp -R research/static out/static && cp -R research/data out/data"
   }
 }

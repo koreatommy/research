@@ -7,6 +7,7 @@
     { "source": "/methodology", "destination": "/methodology.html" },
     { "source": "/analytics", "destination": "/analytics.html" },
     { "source": "/insight", "destination": "/insight.html" },
-    { "source": "/idea10", "destination": "/startup_ideas_report_v2.html" }
+    { "source": "/idea10", "destination": "/startup_ideas_report_v2.html" },
+    { "source": "/youth", "destination": "/youth_ideas.html" }
   ]
 }
