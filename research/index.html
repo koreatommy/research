@@ -15,6 +15,7 @@
       <a href="/analytics" class="nav-tab">Raw data 분석</a>
       <a href="/insight" class="nav-tab">Insight</a>
       <a href="/idea10" class="nav-tab">idea 10</a>
+      <a href="/youth" class="nav-tab">청소년 창업 아이디어</a>
     </nav>
     </div>
   </div>
@@ -28,6 +29,16 @@
 
   <main>
     <div id="crawlToast" class="toast hidden"></div>
+    <div id="crawlProgressPanel" class="crawl-progress hidden">
+      <div class="crawl-progress__header">
+        <span id="crawlProgressLabel">수집 준비 중…</span>
+        <span id="crawlProgressPct">0%</span>
+      </div>
+      <div class="crawl-progress__bar-track">
+        <div id="crawlProgressBar" class="crawl-progress__bar-fill" style="width:0%"></div>
+      </div>
+      <p id="crawlProgressDetail" class="crawl-progress__detail"></p>
+    </div>
 
     <div class="toolbar">
       <div class="toolbar-left">

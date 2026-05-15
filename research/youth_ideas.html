@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청소년 창업 아이디어 10선 — 모두의 창업</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body.youth-report {
+            --y-primary: #6C3CE1;
+            --y-secondary: #FF6B35;
+            --y-green: #00C9A7;
+            --y-blue: #4DA8FF;
+            --y-pink: #FF5DA0;
+            --y-yellow: #FFD93D;
+            --y-bg: #FAFBFF;
+            --y-text: #2D2B55;
+            --y-text-sub: #7C7A9C;
+            --y-card: #ffffff;
+            --y-shadow: 0 8px 30px rgba(108,60,225,0.08);
+            --y-shadow-lg: 0 16px 48px rgba(108,60,225,0.12);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body.youth-report {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--y-bg);
+            color: var(--y-text);
+            line-height: 1.8;
+        }
+
+        .y-hero {
+            background: linear-gradient(135deg, #6C3CE1 0%, #4DA8FF 50%, #00C9A7 100%);
+            padding: 70px 40px 90px;
+            position: relative;
+            overflow: hidden;
+        }
+        .y-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/svg%3E");
+        }
+        .y-hero-content {
+            position: relative; z-index: 1;
+            max-width: 1100px; margin: 0 auto;
+        }
+        .y-hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .y-hero h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        .y-hero h1 em {
+            font-style: normal;
+            color: var(--y-yellow);
+        }
+        .y-hero-sub { color: rgba(255,255,255,0.85); font-size: 1.05rem; max-width: 700px; }
+        .y-hero-stats {
+            display: flex; flex-wrap: wrap; gap: 30px; margin-top: 35px;
+        }
+        .y-hero-stat { text-align: left; }
+        .y-hero-stat-value {
+            font-size: 2.2rem; font-weight: 900; color: var(--y-yellow); line-height: 1;
+        }
+        .y-hero-stat-label { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 6px; }
+
+        .y-container { max-width: 1100px; margin: 0 auto; padding: 50px 40px; }
+
+        .y-section-header { margin-bottom: 35px; }
+        .y-section-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: 10px;
+            background: linear-gradient(135deg, var(--y-primary), var(--y-blue));
+            color: #fff; font-weight: 800; font-size: 0.9rem; margin-bottom: 10px;
+        }
+        .y-section-title { font-size: 1.6rem; font-weight: 700; }
+        .y-section-sub { color: var(--y-text-sub); font-size: 0.95rem; margin-top: 4px; }
+
+        .y-intro-box {
+            background: linear-gradient(135deg, rgba(108,60,225,0.06), rgba(0,201,167,0.06));
+            border: 1px solid rgba(108,60,225,0.15);
+            border-radius: 20px;
+            padding: 28px 32px;
+            margin-bottom: 40px;
+        }
+        .y-intro-box p { color: var(--y-text-sub); line-height: 1.9; font-size: 0.95rem; }
+        .y-intro-box strong { color: var(--y-primary); }
+
+        .y-ideas { display: grid; gap: 28px; }
+        .y-card {
+            background: var(--y-card);
+            border-radius: 20px;
+            box-shadow: var(--y-shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .y-card:hover { transform: translateY(-4px); box-shadow: var(--y-shadow-lg); }
+        .y-card-top { height: 5px; }
+        .y-card:nth-child(odd) .y-card-top { background: linear-gradient(90deg, var(--y-primary), var(--y-blue)); }
+        .y-card:nth-child(even) .y-card-top { background: linear-gradient(90deg, var(--y-secondary), var(--y-pink)); }
+
+        .y-card-header { padding: 28px 30px 16px; position: relative; }
+        .y-card-no {
+            position: absolute; top: 16px; right: 24px;
+            font-size: 3.5rem; font-weight: 900;
+            color: rgba(108,60,225,0.07); line-height: 1;
+        }
+        .y-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .y-tag {
+            padding: 4px 12px; border-radius: 20px;
+            font-size: 0.72rem; font-weight: 600;
+        }
+        .y-tag-age { background: #EDE9FE; color: var(--y-primary); }
+        .y-tag-skill { background: #D1FAE5; color: #065F46; }
+        .y-tag-data { background: #FEF3C7; color: #92400E; }
+        .y-tag-fun { background: #FCE7F3; color: #9D174D; }
+
+        .y-card-title { font-size: 1.35rem; font-weight: 700; color: var(--y-text); }
+        .y-card-subtitle { color: var(--y-text-sub); font-size: 0.9rem; margin-top: 4px; }
+
+        .y-card-body { padding: 0 30px 28px; }
+        .y-card-section { margin-bottom: 16px; }
+        .y-card-label {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; margin-bottom: 6px;
+        }
+        .y-card-label.idea-lbl { color: var(--y-primary); }
+        .y-card-label.data-lbl { color: var(--y-green); }
+        .y-card-label.how-lbl { color: var(--y-secondary); }
+        .y-card-label.grow-lbl { color: var(--y-pink); }
+        .y-card-section p { font-size: 0.92rem; line-height: 1.8; }
+
+        .y-card-evidence {
+            background: linear-gradient(135deg, rgba(77,168,255,0.06), rgba(0,201,167,0.06));
+            border-left: 3px solid var(--y-blue);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-top: 12px;
+        }
+        .y-card-evidence p { font-size: 0.85rem; color: var(--y-text-sub); }
+
+        .y-card-chips {
+            display: flex; flex-wrap: wrap; gap: 12px;
+            background: var(--y-bg);
+            padding: 16px;
+            border-radius: 14px;
+            margin-top: 16px;
+        }
+        .y-chip {
+            flex: 1; min-width: 100px; text-align: center;
+            padding: 10px 8px; border-radius: 10px;
+            background: var(--y-card);
+        }
+        .y-chip-value { font-size: 1rem; font-weight: 700; color: var(--y-primary); }
+        .y-chip-label { font-size: 0.7rem; color: var(--y-text-sub); margin-top: 2px; }
+
+        .y-method {
+            background: var(--y-card);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--y-shadow);
+            margin-top: 50px;
+        }
+        .y-method h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 18px; }
+        .y-method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .y-method-item { padding: 18px; background: var(--y-bg); border-radius: 12px; }
+        .y-method-item h4 { font-size: 0.85rem; font-weight: 700; color: var(--y-primary); margin-bottom: 8px; }
+        .y-method-item p { font-size: 0.85rem; color: var(--y-text-sub); line-height: 1.7; }
+
+        .y-conclusion {
+            background: linear-gradient(135deg, #6C3CE1, #4DA8FF);
+            border-radius: 24px;
+            padding: 45px;
+            color: #fff;
+            margin-top: 50px;
+        }
+        .y-conclusion h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 16px; }
+        .y-conclusion p { font-size: 1rem; line-height: 1.9; opacity: 0.9; }
+        .y-conclusion ul { list-style: none; margin-top: 20px; }
+        .y-conclusion li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.15); }
+        .y-conclusion li:last-child { border-bottom: none; }
+        .y-conclusion li::before { content: '🚀'; position: absolute; left: 0; }
+
+        .y-footer {
+            background: var(--y-text);
+            color: rgba(255,255,255,0.6);
+            padding: 35px 40px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .y-footer a { color: var(--y-yellow); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .y-hero { padding: 50px 20px 70px; }
+            .y-container { padding: 30px 20px; }
+            .y-card-header { padding: 22px 20px 12px; }
+            .y-card-body { padding: 0 20px 22px; }
+            .y-chip { min-width: 80px; }
+        }
+    </style>
+</head>
+<body class="youth-report">
+    <div class="site-header__nav">
+        <div class="site-header__nav-scroll">
+            <nav class="main-nav" aria-label="주요 메뉴">
+            <a href="/methodology" class="nav-tab">데이터 수집 및 분석 방법</a>
+            <a href="/" class="nav-tab">아이디어 목록</a>
+            <a href="/analytics" class="nav-tab">Raw data 분석</a>
+            <a href="/insight" class="nav-tab">Insight</a>
+            <a href="/idea10" class="nav-tab">idea 10</a>
+            <a href="/youth" class="nav-tab active">청소년 창업 아이디어</a>
+        </nav>
+        </div>
+    </div>
+    <div class="site-header__nav-spacer" aria-hidden="true"></div>
+    <header class="site-header">
+        <div class="site-header__intro">
+            <h1>청소년 창업 아이디어 10선</h1>
+            <p id="meta">데이터 기반 초·중학생 창업 영감 보고서</p>
+        </div>
+    </header>
+
+    <section class="y-hero">
+        <div class="y-hero-content">
+            <div class="y-hero-badge">🎒 YOUNG FOUNDERS LAB</div>
+            <h1>초·중학생을 위한<br><em>데이터 기반</em> 창업 아이디어 10선</h1>
+            <p class="y-hero-sub">35,290건의 실제 창업 아이디어를 분석해서, 청소년도 시작할 수 있는 독창적인 아이템 10가지를 뽑았습니다. 코딩 없이도, 용돈으로도, 학교에서도 도전할 수 있어요!</p>
+            <div class="y-hero-stats">
+                <div class="y-hero-stat">
+                    <div class="y-hero-stat-value" id="heroTotal">35,290</div>
+                    <div class="y-hero-stat-label">분석한 창업 아이디어</div>
+                </div>
+                <div class="y-hero-stat">
+                    <div class="y-hero-stat-value">10</div>
+                    <div class="y-hero-stat-label">청소년 맞춤 아이디어</div>
+                </div>
+                <div class="y-hero-stat">
+                    <div class="y-hero-stat-value" id="heroAI">8,194</div>
+                    <div class="y-hero-stat-label">AI 관련 아이디어</div>
+                </div>
+                <div class="y-hero-stat">
+                    <div class="y-hero-stat-value" id="heroLocal">6,098</div>
+                    <div class="y-hero-stat-label">로컬/동네 아이디어</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="y-container">
+        <section>
+            <div class="y-section-header">
+                <div class="y-section-num">01</div>
+                <h2 class="y-section-title">왜 청소년도 창업을 생각해야 할까?</h2>
+                <p class="y-section-sub">어른들의 35,290개 아이디어에서 찾은 청소년만의 기회</p>
+            </div>
+            <div class="y-intro-box">
+                <p>
+                    어른들이 올린 35,290개의 창업 아이디어를 분석해보면, <strong>AI(8,194건)</strong>와 <strong>로컬/동네(6,098건)</strong>가 가장 큰 트렌드입니다.
+                    그런데 <strong>재무(34건), 프롭테크(167건), 패션(203건)</strong> 같은 분야는 아이디어가 아주 적어서, 오히려 기회가 큽니다.
+                    청소년은 어른들이 당연하게 여기는 것을 새로운 눈으로 볼 수 있고, 또래 친구들의 진짜 고민을 가장 잘 압니다.
+                    아래 10가지 아이디어는 <strong>초등학생·중학생이 직접 만들고 운영할 수 있도록</strong> 설계했습니다.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="y-section-header">
+                <div class="y-section-num">02</div>
+                <h2 class="y-section-title">청소년 창업 아이디어 10선</h2>
+                <p class="y-section-sub">데이터가 증명한 틈새 × 청소년의 시선 × 실행 가능성</p>
+            </div>
+
+            <div class="y-ideas" id="youthIdeasContainer">
+                <div class="y-card">
+                    <div class="y-card-header">
+                        <p class="y-card-subtitle">아이디어를 불러오는 중입니다...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="y-method">
+            <h3>📋 이 아이디어는 어떻게 골랐을까?</h3>
+            <div class="y-method-grid">
+                <div class="y-method-item">
+                    <h4>1. 어른들의 데이터 분석</h4>
+                    <p>modoo.or.kr의 35,290개 아이디어에서 분야별 건수, 인기 키워드, 빈틈 분야를 찾았어요.</p>
+                </div>
+                <div class="y-method-item">
+                    <h4>2. 청소년 눈높이 변환</h4>
+                    <p>어른용 아이디어의 핵심 인사이트를 청소년이 실행 가능한 규모와 방법으로 바꿨어요.</p>
+                </div>
+                <div class="y-method-item">
+                    <h4>3. 실행 가능성 체크</h4>
+                    <p>코딩 필수인지, 용돈으로 시작 가능한지, 학교 프로젝트로 할 수 있는지를 확인했어요.</p>
+                </div>
+                <div class="y-method-item">
+                    <h4>4. 재미 + 배움 균형</h4>
+                    <p>돈만 버는 게 아니라, 문제 해결력·데이터 감각·커뮤니케이션 능력도 키울 수 있어요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="y-conclusion" id="youthConclusion">
+            <h2>💡 청소년 창업가에게 전하는 말</h2>
+            <p>
+                35,290개의 어른 아이디어를 분석해보면, 정작 빈틈이 많은 분야는 누구도 도전하지 않는 곳입니다.
+                여러분은 학교, 동네, 또래 친구라는 가장 가까운 시장을 이미 갖고 있어요.
+                완벽한 앱을 만들 필요 없이, 노트 한 권이나 인스타 계정 하나로 시작할 수 있습니다.
+            </p>
+            <ul>
+                <li><strong>가장 좋은 출발:</strong> 친구 5명에게 "이거 쓸래?" 하고 물어보는 것</li>
+                <li><strong>실패해도 OK:</strong> 어른들도 35,290개 중 대부분은 시도 단계입니다</li>
+                <li><strong>나만의 강점:</strong> 어른이 모르는 학교·급식·교복·시험·SNS의 진짜 불편을 아는 것</li>
+                <li><strong>데이터로 설득:</strong> "내 감이 아니라 35,290건 분석 결과로 골랐어요"라고 말할 수 있어요</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="y-footer">
+        <p>본 보고서는 <a href="https://www.modoo.or.kr/idea/list" target="_blank">modoo.or.kr</a> 최신 전수 데이터를 분석해 청소년 눈높이로 재구성했습니다.</p>
+        <p style="margin-top: 8px;">원본 분석: <a href="/idea10">idea 10</a> · <a href="/analytics">Raw data 분석</a> · <a href="/insight">Insight</a></p>
+    </footer>
+
+    <script src="/static/youth10.js"></script>
+</body>
+</html>

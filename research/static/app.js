@@ -465,12 +465,105 @@
     if (!toast) return;
     toast.textContent = msg;
     toast.className = `toast toast-${type}`;
-    setTimeout(() => { toast.className = "toast hidden"; }, 3000);
+    setTimeout(() => { toast.className = "toast hidden"; }, 4000);
+  }
+
+  /* ── 진행률 패널 DOM ── */
+  const progressPanel = document.getElementById("crawlProgressPanel");
+  const progressLabel = document.getElementById("crawlProgressLabel");
+  const progressPct   = document.getElementById("crawlProgressPct");
+  const progressBar   = document.getElementById("crawlProgressBar");
+  const progressDetail = document.getElementById("crawlProgressDetail");
+
+  function showProgress(st) {
+    if (!progressPanel) return;
+    progressPanel.classList.remove("hidden", "crawl-progress--error", "crawl-progress--done");
+
+    const pct = Math.min(st.percent || 0, 100);
+    progressBar.style.width = pct + "%";
+    progressPct.textContent = pct + "%";
+
+    const phaseLabels = {
+      starting: "수집 준비 중…",
+      collecting: `수집 중 — ${st.current_subcategory || ""}`,
+      sorting: "정렬 중…",
+      saving: "저장 중…",
+      exporting: "분석 데이터 생성 중…",
+      done: "수집 완료!",
+      error: "수집 오류",
+    };
+    progressLabel.textContent = phaseLabels[st.phase] || st.phase;
+
+    const parts = [];
+    if (st.subcategory_index != null && st.total_subcategories)
+      parts.push(`분야 ${st.subcategory_index}/${st.total_subcategories}`);
+    if (st.pages_fetched) parts.push(`${st.pages_fetched}페이지 완료`);
+    if (st.ideas_collected) parts.push(`${st.ideas_collected.toLocaleString()}건 수집`);
+    progressDetail.textContent = parts.join(" · ");
+
+    if (st.phase === "done") {
+      progressPanel.classList.add("crawl-progress--done");
+      progressBar.style.width = "100%";
+      progressPct.textContent = "100%";
+    }
+    if (st.phase === "error") {
+      progressPanel.classList.add("crawl-progress--error");
+      progressDetail.textContent = st.error || "알 수 없는 오류";
+    }
+  }
+
+  function hideProgress() {
+    if (progressPanel) progressPanel.classList.add("hidden");
   }
 
   function setupCrawlBtn(btn) {
     let running = false;
     const btnText = document.getElementById("crawlBtnText");
+    let pollTimer = null;
+
+    async function pollStatus() {
+      try {
+        const res = await fetch("/api/crawl/status");
+        if (!res.ok) return;
+        const st = await res.json();
+        showProgress(st);
+
+        if (st.phase === "done") {
+          stopPolling();
+          running = false;
+          btn.disabled = false;
+          if (btnText) btnText.textContent = "최신 데이터 수집";
+          btn.classList.remove("loading");
+          showToast(`${st.ideas_collected ? st.ideas_collected.toLocaleString() + '건' : ''} 수집 완료`, "success");
+          const fresh = await fetch(DATA_URL + "?t=" + Date.now());
+          if (fresh.ok) {
+            ideasPayload = await fresh.json();
+            applyMetaFromPayload(ideasPayload);
+            currentPage = 1;
+            renderIdeas();
+          }
+          setTimeout(hideProgress, 5000);
+          return;
+        }
+        if (st.phase === "error") {
+          stopPolling();
+          running = false;
+          btn.disabled = false;
+          if (btnText) btnText.textContent = "최신 데이터 수집";
+          btn.classList.remove("loading");
+          showToast(st.error || "수집 실패", "error");
+          setTimeout(hideProgress, 8000);
+          return;
+        }
+      } catch (_) { /* 네트워크 오류 시 다음 폴링까지 대기 */ }
+    }
+
+    function startPolling() {
+      pollTimer = setInterval(pollStatus, 1500);
+    }
+    function stopPolling() {
+      if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+    }
 
     btn.addEventListener("click", async () => {
       if (running) return;
@@ -482,27 +575,53 @@
       try {
         const res = await fetch("/api/crawl", { method: "POST" });
         const data = await res.json();
-        if (res.ok) {
-          showToast(data.message || "수집 완료", "success");
-          const fresh = await fetch(DATA_URL + "?t=" + Date.now());
-          if (fresh.ok) {
-            ideasPayload = await fresh.json();
-            applyMetaFromPayload(ideasPayload);
-            currentPage = 1;
-            renderIdeas();
-          }
+        if (res.ok || res.status === 202) {
+          showProgress({
+            phase: "starting", percent: 0,
+            subcategory_index: 0, total_subcategories: 22,
+            pages_fetched: 0, ideas_collected: 0,
+          });
+          startPolling();
+        } else if (res.status === 409) {
+          showProgress({
+            phase: "collecting", percent: 0,
+            subcategory_index: 0, total_subcategories: 22,
+            pages_fetched: 0, ideas_collected: 0,
+          });
+          startPolling();
         } else {
-          showToast(data.detail || "수집 실패", "error");
+          showToast(data.detail || "수집 시작 실패", "error");
+          running = false;
+          btn.disabled = false;
+          if (btnText) btnText.textContent = "최신 데이터 수집";
+          btn.classList.remove("loading");
         }
       } catch (_) {
         showToast("네트워크 오류", "error");
-      } finally {
         running = false;
         btn.disabled = false;
         if (btnText) btnText.textContent = "최신 데이터 수집";
         btn.classList.remove("loading");
       }
     });
+
+    checkIfAlreadyRunning();
+
+    async function checkIfAlreadyRunning() {
+      try {
+        const res = await fetch("/api/crawl/status");
+        if (!res.ok) return;
+        const st = await res.json();
+        if (st.in_progress) {
+          running = true;
+          btn.disabled = true;
+          if (btnText) btnText.textContent = "수집 중...";
+          btn.classList.add("loading");
+          showProgress(st);
+          startPolling();
+        }
+      } catch (_) { /* 무시 */ }
+    }
   }
 
   init();

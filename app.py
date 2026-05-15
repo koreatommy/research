@@ -18,7 +18,7 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import FileResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from modoo_fetch import CrawlError, collect_all_ideas
+from modoo_fetch import CrawlError, CrawlProgress, collect_all_ideas
 from modoo_filters import TECH_SUBCATEGORIES, LOCAL_SUBCATEGORIES, filter_ideas
 from modoo_analytics import compute_analytics
 from modoo_insight import compute_insight
@@ -31,10 +31,9 @@ STATIC_DIR = RESEARCH_DIR / "static"
 DATA_DIR = RESEARCH_DIR / "data"
 
 ideas_data: dict[str, Any] = {}
-crawl_lock = asyncio.Lock()
+crawl_progress = CrawlProgress()
+_crawl_task: Optional[asyncio.Task] = None
 
-# Cursor 등 IDE 내장 브라우저(Electron WebView)가 HTML/CSS를 오래 캐시하는 경우가 많아
-# 로컬 개발 시 정적 자산은 재검증·비저장으로 내려준다.
 _DEV_NO_CACHE_HEADERS = {"Cache-Control": "no-store, max-age=0", "Pragma": "no-cache"}
 
 
@@ -42,7 +41,6 @@ def _html_file_response(path: Path) -> FileResponse:
     return FileResponse(path, media_type="text/html", headers=dict(_DEV_NO_CACHE_HEADERS))
 
 
-# openpyxl이 거부하는 제어 문자(예: U+0000) 제거 — API 원문에 포함될 수 있음
 _ILLEGAL_XLSX_CHARS = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f]")
 
 
@@ -61,6 +59,8 @@ async def lifespan(app: FastAPI):
     else:
         ideas_data = {"ideas": [], "total": 0, "crawled_at": None, "url": None}
     yield
+    if _crawl_task and not _crawl_task.done():
+        _crawl_task.cancel()
 
 
 app = FastAPI(title="모두의 창업 뷰어", lifespan=lifespan)
@@ -195,29 +195,67 @@ def _export_research_data(data: dict[str, Any]) -> None:
     write_insight_data_source(DATA_DIR / "insight_data_source.json", data)
 
 
+@app.get("/api/crawl/status")
+async def api_crawl_status():
+    """수집 진행 상태를 상세하게 반환. 폴링으로 진행률 확인 가능."""
+    return crawl_progress.to_dict()
+
+
+async def _run_crawl_background():
+    """백그라운드에서 수집 + export를 실행하는 코루틴."""
+    global ideas_data
+    try:
+        crawl_progress.phase = "collecting"
+        result = await asyncio.to_thread(
+            collect_all_ideas, JSON_PATH, 0.15, crawl_progress
+        )
+        crawl_progress.phase = "exporting"
+        await asyncio.to_thread(_export_research_data, result)
+        ideas_data = result
+        crawl_progress.phase = "done"
+        crawl_progress.in_progress = False
+    except CrawlError as e:
+        crawl_progress.error = str(e)
+        crawl_progress.phase = "error"
+        crawl_progress.in_progress = False
+    except Exception as e:
+        crawl_progress.error = str(e)
+        crawl_progress.phase = "error"
+        crawl_progress.in_progress = False
+
+
 @app.post("/api/crawl")
 async def api_crawl():
-    """최신 데이터 수집 후 research/data/ 자동 export. 동시 요청 방지."""
-    global ideas_data
+    """
+    최신 데이터 수집을 백그라운드로 시작한다.
+    즉시 202 Accepted를 반환하고, GET /api/crawl/status로 진행률을 확인.
+    """
+    global _crawl_task
 
-    if crawl_lock.locked():
+    if crawl_progress.in_progress:
         raise HTTPException(status_code=409, detail="수집이 이미 진행 중입니다")
 
-    async with crawl_lock:
-        try:
-            result = await asyncio.to_thread(collect_all_ideas, JSON_PATH)
-        except CrawlError as e:
-            raise HTTPException(status_code=500, detail=str(e))
+    crawl_progress.in_progress = True
+    crawl_progress.error = None
+    crawl_progress.phase = "starting"
+    crawl_progress.pages_fetched = 0
+    crawl_progress.total_pages_estimated = 0
+    crawl_progress.ideas_collected = 0
+    crawl_progress.subcategory_index = 0
+    crawl_progress.current_subcategory = ""
+    crawl_progress.subcategory_stats = {}
+    crawl_progress.started_at = datetime.now().isoformat()
 
-        ideas_data = result
-        await asyncio.to_thread(_export_research_data, result)
+    _crawl_task = asyncio.create_task(_run_crawl_background())
 
-    return {
-        "ok": True,
-        "total": result["total"],
-        "crawled_at": result["crawled_at"],
-        "message": f"{result['total']}건 수집 완료",
-    }
+    return Response(
+        content=json.dumps({
+            "ok": True,
+            "message": "수집이 시작되었습니다. GET /api/crawl/status로 진행률을 확인하세요.",
+        }, ensure_ascii=False),
+        status_code=202,
+        media_type="application/json",
+    )
 
 
 @app.get("/methodology")
@@ -250,6 +288,14 @@ async def idea10_report():
     if html_path.is_file():
         return _html_file_response(html_path)
     return {"message": "research/startup_ideas_report_v2.html 파일이 없습니다."}
+
+
+@app.get("/youth")
+async def youth_ideas_page():
+    html_path = RESEARCH_DIR / "youth_ideas.html"
+    if html_path.is_file():
+        return _html_file_response(html_path)
+    return {"message": "research/youth_ideas.html 파일이 없습니다."}
 
 
 @app.get("/api/analytics")
